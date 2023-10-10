@@ -1,0 +1,75 @@
+---
+title: NLP
+toc: true
+date: "2023-10-15"
+draft: true
+author: Suchit G
+description: Description goes here
+categories:
+    - Beginner
+    - NLP
+---
+
+## Introduction
+
+The world was not ready for something as crazy as ChatGPT. It took the world by storm and also the creators who were earlier going gaga over Crypto, Web3 and ... blah blah ... you name it. But did you know that there were plenty of groundbreaking papers/inventions prior to ChatGPT. There were ULMFiT, "Attention is all you need" (the authors knew what they were talking about 😏), BERT, etc., that introduced some fundamental architectures/techniques that have led to some state-of-the-art models. Now, excuse me if I have missed out on other revolutionary papers; I have listed only those I have come across.
+
+In this post I will be going over some fundamental terms used in NLP that are not as hard as they sound to be. I will also attempt to put my understanding of input embedding matrices, with respect to NLP, into words and give a brief overview of how LMs (Language Models) work.
+
+You are not required to have extensive knowledge about neural networks and such to understand all of the writing here, although that would help.
+
+## Terms you should know
+
+### Tokenization
+
+The essence of how neural networks work is that they take in a bunch of numerical inputs, find optimal coefficients (which are tweaked during "training" to get the desired result) to multiply the inputs with to get the result. Models working with images convert the images into tensors or a bunch of numbers and take that as input. But how do LMs take sentences and possibly entire documents as input? They use somethig called 'tokenization'. The sentences and/or words are broken down into smaller chunks. The specifics of this depends on the 'tokenizer' used. For example, here's how tokenization might look like:
+``` python
+tokenize("A platypus is an ornithorhyncus anatinus.")
+```
+```
+['▁A',
+ '▁platypus',
+ '▁is',
+ '▁an',
+ '▁or',
+ 'ni',
+ 'tho',
+ 'rhynch',
+ 'us',
+ '▁an',
+ 'at',
+ 'inus',
+ '.']
+```
+What do we do with these 'tokens' now? We convert them to something that can be fed into neural networks, i.e., numbers.
+
+### Numericalization
+
+Numericalization does exactly what the name suggests, it numericalizes the tokens. Firstly, a list of unique tokens is made which is called the vocab (there you go, a definition inside another definition. I'm smooth asf). Then, numbers are assigned to words in the vocab. This set of numbers act as input to the LM. More on this [here](#input-to-lms-embeddings).
+
+### Fine-tuning
+
+The concept of fine-tuning was first introduced in the field of Computer Vision. A model (neural network) trained on a large corpus of related data is taken and the last few layers are then trained (keeping the other layers "freezed") on the task specific dataset. The pre-trained model will be having low-level representations from the pre-training which helps in the downstream task. Fine-tuning was introduced in NLP through ["Universal Language Model Fine-tuning for Text Classification"](https://arxiv.org/abs/1801.06146v5) by Jeremy Howard and Sebastian Ruder.
+
+## How do LMs work?
+
+Baseline and/or task-agnostic LMs are trained to predict the "next words" after the input. This technique helps the LMs capture the relationship between words and the models can even generate coherent sentences for a few 10s of words. 
+
+### Input to LMs (Embeddings)
+
+It is tempting to think that these (numericalized) tokens are used as it is as numbers (as was the case with me). [This](https://www.youtube.com/watch?v=viZrOnJclY0) (also embedded below) wonderful video by StatQuest gave me an idea as how the inputs work for LMs. The essence of the video is that LMs are first trained to learn the embeddings of the words (before any downstream task, like classification). Each word's embedding is in the form of a vector in a n-dimensional vector space. More similar the words, closer are their vector representations 
+
+{{< video https://www.youtube.com/watch?v=viZrOnJclY0 >}}
+
+::: {.callout-caution collapse="true"}
+## Nerdy words alert
+- Vector: Any quantity that has quantity and direction, in the most basic sense. In this case, a list of numbers which when converted to a arrow-like thing, points in a particular direction and has a particular length.
+- n-dimensional space: Know about 2D and 3D space? nD is something similar. 2 or 3 dimensions are not enough to capture word representations and hence 'n' (arbritary, or as decided by the practitioner) dimensions are used for the same. Don't worry if you can't visualize it. No one can ;)
+:::
+
+Thank you for reading my blog. You can reach out to me through my socials here:
+
+- Discord - "lostsquid."
+- LinkedIn - /in/suchitg04/
+
+I hope to see you soon. Until then 👋
