@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/nlp-terms/index.html",
       "/posts/mnist/index.html",
       "/posts/data-cleaning/index.html",
       "/posts/tvdesktopclassifier/index.html",

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Suchit G">
-<meta name="dcterms.date" content="2023-10-15">
-<meta name="description" content="Description goes here">
+<meta name="dcterms.date" content="2023-10-13">
+<meta name="description" content="Some fundamental terms and concepts related to NLP/LMs.">
 
-<title>AsquirousSpeaks - NLP</title>
+<title>AsquirousSpeaks - Intro to NLP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,10 +156,10 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">NLP</h1>
+      <h1 class="title">Intro to NLP</h1>
                   <div>
         <div class="description">
-          Description goes here
+          Some fundamental terms and concepts related to NLP/LMs.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -182,7 +182,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 15, 2023</p>
+        <p class="date">October 13, 2023</p>
       </div>
     </div>
     
@@ -220,15 +220,15 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The world was not ready for something as crazy as ChatGPT. It took the world by storm and also the creators who were earlier going gaga over Crypto, Web3 and … blah blah … you name it. But did you know that there were plenty of groundbreaking papers/inventions prior to ChatGPT. There were ULMFiT, “Attention is all you need” (the authors knew what they were talking about 😏), BERT, etc., that introduced some fundamental architectures/techniques that have led to some state-of-the-art models. Now, excuse me if I have missed out on other revolutionary papers; I have listed only those I have come across.</p>
-<p>In this post I will be going over some fundamental terms used in NLP that are not as hard as they sound to be. I will also attempt to put my understanding of input embedding matrices, with respect to NLP, into words and give a brief overview of how LMs (Language Models) work.</p>
+<p>The world was not ready for something as crazy as ChatGPT. It took the world by storm and also the creators who were earlier going gaga over Crypto, Web3 and … blah blah … you name it. But did you know that there were plenty of groundbreaking papers/inventions prior to ChatGPT. There was ULMFiT, “Attention is all you need” (the authors knew what they were talking about 😏), BERT, etc., that introduced some fundamental architectures/techniques that have led to some state-of-the-art models. Now, excuse me if I have missed out on other revolutionary papers; I have listed only those I have come across.</p>
+<p>In this brief post I will be going over some fundamental terms used in NLP that are not as complex as they sound to be. I will also attempt to put into words my understanding of input (embeddings) to LMs (Language Models) and give a brief overview of how LMs work.</p>
 <p>You are not required to have extensive knowledge about neural networks and such to understand all of the writing here, although that would help.</p>
 </section>
 <section id="terms-you-should-know" class="level2">
 <h2 class="anchored" data-anchor-id="terms-you-should-know">Terms you should know</h2>
 <section id="tokenization" class="level3">
 <h3 class="anchored" data-anchor-id="tokenization">Tokenization</h3>
-<p>The essence of how neural networks work is that they take in a bunch of numerical inputs, find optimal coefficients (which are tweaked during “training” to get the desired result) to multiply the inputs with to get the result. Models working with images convert the images into tensors or a bunch of numbers and take that as input. But how do LMs take sentences and possibly entire documents as input? They use somethig called ‘tokenization’. The sentences and/or words are broken down into smaller chunks. The specifics of this depends on the ‘tokenizer’ used. For example, here’s how tokenization might look like:</p>
+<p>The essence of how neural networks work is that they take in a bunch of numerical inputs, find optimal coefficients (which are tweaked during “training” to get the desired result) to multiply the inputs with to get the result. Models working with images convert the images into tensors or a bunch of numbers and take that as input. But how do LMs take sentences and possibly entire documents as input? They use something called ‘tokenization’. The sentences and/or words are broken down into smaller chunks. The specifics of this depends on the ‘tokenizer’ used. For example, here’s how tokenization might look like:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tokenize(<span class="st">"A platypus is an ornithorhyncus anatinus."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>['▁A',
  '▁platypus',
@@ -247,7 +247,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </section>
 <section id="numericalization" class="level3">
 <h3 class="anchored" data-anchor-id="numericalization">Numericalization</h3>
-<p>Numericalization does exactly what the name suggests, it numericalizes the tokens. Firstly, a list of unique tokens is made which is called the vocab (there you go, a definition inside another definition. I’m smooth asf). Then, numbers are assigned to words in the vocab. This set of numbers act as input to the LM. More on this <a href="#input-to-lms-embeddings">here</a>.</p>
+<p>Numericalization does exactly what the name suggests, it numericalizes the tokens. Firstly, a list of unique tokens is made which is called the vocab (there you go, a definition inside another definition. I’m damn smooth). Then, numbers are assigned to words in the vocab. This set of numbers act as input to the LM. More on this <a href="#input-to-lms-embeddings">here</a>.</p>
 </section>
 <section id="fine-tuning" class="level3">
 <h3 class="anchored" data-anchor-id="fine-tuning">Fine-tuning</h3>
@@ -256,10 +256,10 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </section>
 <section id="how-do-lms-work" class="level2">
 <h2 class="anchored" data-anchor-id="how-do-lms-work">How do LMs work?</h2>
-<p>Baseline and/or task-agnostic LMs are trained to predict the “next words” after the input. This technique helps the LMs capture the relationship between words and the models can even generate coherent sentences for a few 10s of words.</p>
+<p>Baseline and/or task-agnostic LMs are trained to predict the “next words” after the input. That is, the next words are the “dependent variables”, commonly denoted by <code>y</code>. This technique helps the LMs capture the relationship between words and the models can even generate coherent sentences for a few 10s of words (these models by themselves do not work like ChatGPT does just because they can generate text. That’s a topic of discussion for another day).</p>
 <section id="input-to-lms-embeddings" class="level3">
 <h3 class="anchored" data-anchor-id="input-to-lms-embeddings">Input to LMs (Embeddings)</h3>
-<p>It is tempting to think that these (numericalized) tokens are used as it is as numbers (as was the case with me). <a href="https://www.youtube.com/watch?v=viZrOnJclY0">This</a> (also embedded below) wonderful video by StatQuest gave me an idea as how the inputs work for LMs. The essence of the video is that LMs are first trained to learn the embeddings of the words (before any downstream task, like classification). Each word’s embedding is in the form of a vector in a n-dimensional vector space. More similar the words, closer are their vector representations</p>
+<p>It is tempting to think that these (numericalized) tokens are used as it is as numbers (as was the case with me). <a href="https://www.youtube.com/watch?v=viZrOnJclY0">This</a> (also embedded below) wonderful video by StatQuest helped me understand how the inputs work for LMs. The essence of the video is that LMs are first trained to learn the embeddings of the words (before any downstream task, like classification). Each word’s embedding is in the form of a vector in a n-dimensional vector space. More similar the words, closer are their vector representations.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/viZrOnJclY0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
