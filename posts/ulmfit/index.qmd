@@ -1,0 +1,9 @@
+---
+title: "Distillation: ULMFIT"
+toc: true
+date: "2023-11-2"
+author: Suchit G
+description: Summary of the ULMFIT paper by J. Howard and S. Ruder
+categories:
+    - NLP
+    - Research
