@@ -1,7 +1,5 @@
 # AsquirousSpeaks
 
-Hey everyone!
+Hi there!
 
-This is my personal blog where I hope to share my learnings and mostly tech stuff. My aim is to help the me from a week or a month or an year ago, so that people going through the same problem/thoughts can gain better clarity, and also provide you with some interesting content. The added bonus is that I’ll still be able to remember how I felt during that situation, therefore enabling me to provide you with help that’ll actually help you.
-
-With that said, you can expect my blogs to be short and have hints of GenZ humour here and there.
+This is my personal blog where I write down my learnings. The posts are written with the intention of being able to help the *me* from the recent past. Since the posts are written as and when I learn something new, while following some course or otherwise, I will put up the pre-requisites for potential readers to read/understand each post.
