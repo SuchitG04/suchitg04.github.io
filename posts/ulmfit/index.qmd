@@ -3,10 +3,32 @@ title: "Distillation: ULMFIT"
 toc: true
 date: "2023-11-2"
 author: Suchit G
-description: Summary of the ULMFIT paper by J. Howard and S. Ruder
+description: Summary of the ULMFIT paper by J. Howard and S. Ruder.
 categories:
     - NLP
     - Research
 ---
 
-#
+# Introduction
+
+## Fine-tuning
+
+## Language Model (LM)
+
+# How ULMFIT works?
+
+## 1. Pre-training LM on general domain text corpus
+
+## 2. Fine-tuning LM on target task text corpus
+
+### Discriminative fine-tuning
+
+### Slanted triangular learning rates (SLTR)
+
+## 3. Fine-tuning text classifier on labelled test corpus
+
+### Gradual unfreezing
+
+### Bidirectional LM
+
+# Conclusion

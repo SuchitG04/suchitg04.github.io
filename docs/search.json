@@ -74,7 +74,7 @@
     "href": "index.html",
     "title": "AsquirousSpeaks",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nIntro to NLP\n\n\n\n\n\n\n\nBeginner\n\n\nNLP\n\n\n\n\nSome fundamental terms and concepts related to NLP/LMs.\n\n\n\n\n\n\nOct 13, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nClassifying handwritten digits (THE MNIST!)\n\n\n\n\n\n\n\nNeural Networks\n\n\nfast.ai\n\n\nComputerVision\n\n\n\n\nUnderstand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!\n\n\n\n\n\n\nSep 9, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nData Cleaning and Augmentation\n\n\n\n\n\n\n\nData Processing\n\n\nBeginner\n\n\n\n\nThe counter-intuitive idea of data cleaning after training a model and creating data by ourselves.\n\n\n\n\n\n\nJun 27, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nTrain your first image classifier (AI) model!\n\n\n\n\n\n\n\nBeginner\n\n\nComputerVision\n\n\nfast.ai\n\n\n\n\nGet a taste of AI/deep learning with this simple tutorial that trains an image classifier model!\n\n\n\n\n\n\nMay 29, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nHey yo! Welcome to my blog peeps!\n\n\n\n\n\n\n\nExperience\n\n\n\n\nHiya! Know more about my blog!\n\n\n\n\n\n\nMay 15, 2023\n\n\nSuchit G\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n  \n\n\n\n\nDistillation: ULMFIT\n\n\n\n\n\n\n\nNLP\n\n\nResearch\n\n\n\n\nSummary of the ULMFIT paper by J. Howard and S. Ruder.\n\n\n\n\n\n\nNov 2, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nIntro to NLP\n\n\n\n\n\n\n\nBeginner\n\n\nNLP\n\n\n\n\nSome fundamental terms and concepts related to NLP/LMs.\n\n\n\n\n\n\nOct 13, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nClassifying handwritten digits (THE MNIST!)\n\n\n\n\n\n\n\nNeural Networks\n\n\nfast.ai\n\n\nComputerVision\n\n\n\n\nUnderstand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!\n\n\n\n\n\n\nSep 9, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nData Cleaning and Augmentation\n\n\n\n\n\n\n\nData Processing\n\n\nBeginner\n\n\n\n\nThe counter-intuitive idea of data cleaning after training a model and creating data by ourselves.\n\n\n\n\n\n\nJun 27, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nTrain your first image classifier (AI) model!\n\n\n\n\n\n\n\nBeginner\n\n\nComputerVision\n\n\nfast.ai\n\n\n\n\nGet a taste of AI/deep learning with this simple tutorial that trains an image classifier model!\n\n\n\n\n\n\nMay 29, 2023\n\n\nSuchit G\n\n\n\n\n\n\n  \n\n\n\n\nHey yo! Welcome to my blog peeps!\n\n\n\n\n\n\n\nExperience\n\n\n\n\nHiya! Know more about my blog!\n\n\n\n\n\n\nMay 15, 2023\n\n\nSuchit G\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -187,5 +187,40 @@
     "title": "Intro to NLP",
     "section": "How do LMs work?",
     "text": "How do LMs work?\nBaseline and/or task-agnostic LMs are trained to predict the “next words” after the input. That is, the next words are the “dependent variables”, commonly denoted by y. This technique helps the LMs capture the relationship between words and the models can even generate coherent sentences for a few 10s of words (these models by themselves do not work like ChatGPT does just because they can generate text. That’s a topic of discussion for another day).\n\nInput to LMs (Embeddings)\nIt is tempting to think that these (numericalized) tokens are used as it is as numbers (as was the case with me). This (also embedded below) wonderful video by StatQuest helped me understand how the inputs work for LMs. The essence of the video is that LMs are first trained to learn the embeddings of the words (before any downstream task, like classification). Each word’s embedding is in the form of a vector in a n-dimensional vector space. More similar the words, closer are their vector representations.\n\n\n\n\n\n\n\nNerdy words alert\n\n\n\n\n\n\nVector: Any quantity that has quantity and direction, in the most basic sense. In this case, a list of numbers which when converted to a arrow-like thing, points in a particular direction and has a particular length.\nn-dimensional space: Know about 2D and 3D space? nD is something similar. 2 or 3 dimensions are not enough to capture word representations and hence ‘n’ (arbritary, or as decided by the practitioner) dimensions are used for the same. Don’t worry if you can’t visualize it. No one can ;)\n\n\n\n\nThank you for reading my blog. You can reach out to me through my socials here:\n\nDiscord - “lostsquid.”\nLinkedIn - /in/suchitg04/\n\nI hope to see you soon. Until then 👋"
+  },
+  {
+    "objectID": "posts/ulmfit/index.html#pre-training-lm-on-general-domain-text-corpus",
+    "href": "posts/ulmfit/index.html#pre-training-lm-on-general-domain-text-corpus",
+    "title": "Distillation: ULMFIT",
+    "section": "1. Pre-training LM on general domain text corpus",
+    "text": "1. Pre-training LM on general domain text corpus"
+  },
+  {
+    "objectID": "posts/ulmfit/index.html#fine-tuning-lm-on-target-task-text-corpus",
+    "href": "posts/ulmfit/index.html#fine-tuning-lm-on-target-task-text-corpus",
+    "title": "Distillation: ULMFIT",
+    "section": "2. Fine-tuning LM on target task text corpus",
+    "text": "2. Fine-tuning LM on target task text corpus\n\nDiscriminative fine-tuning\n\n\nSlanted triangular learning rates (SLTR)"
+  },
+  {
+    "objectID": "posts/ulmfit/index.html#fine-tuning-text-classifier-on-labelled-test-corpus",
+    "href": "posts/ulmfit/index.html#fine-tuning-text-classifier-on-labelled-test-corpus",
+    "title": "Distillation: ULMFIT",
+    "section": "3. Fine-tuning text classifier on labelled test corpus",
+    "text": "3. Fine-tuning text classifier on labelled test corpus\n\nGradual unfreezing\n\n\nBidirectional LM"
+  },
+  {
+    "objectID": "posts/ulmfit/index.html#how-ulmfit-works",
+    "href": "posts/ulmfit/index.html#how-ulmfit-works",
+    "title": "Distillation: ULMFIT",
+    "section": "How ULMFIT works?",
+    "text": "How ULMFIT works?\n\n1. Pre-training LM on general domain text corpus\n\n\n2. Fine-tuning LM on target task text corpus\n\n\n3. Fine-tuning text classifier on labelled test corpus"
+  },
+  {
+    "objectID": "posts/ulmfit/index.html#conclusion",
+    "href": "posts/ulmfit/index.html#conclusion",
+    "title": "Distillation: ULMFIT",
+    "section": "Conclusion",
+    "text": "Conclusion"
   }
 ]

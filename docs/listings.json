@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/ulmfit/index.html",
       "/posts/nlp-terms/index.html",
       "/posts/mnist/index.html",
       "/posts/data-cleaning/index.html",

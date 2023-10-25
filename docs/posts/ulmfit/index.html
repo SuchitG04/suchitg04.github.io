@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Suchit G">
+<meta name="dcterms.date" content="2023-11-02">
+<meta name="description" content="Summary of the ULMFIT paper by J. Howard and S. Ruder.">
 
-<title>AsquirousSpeaks</title>
+<title>AsquirousSpeaks - Distillation: ULMFIT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon-32x32_vapor2.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon-32x32_vapor2.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,35 +65,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3FN26ZGN6Q"></script>
 
 <script type="text/javascript">
@@ -103,10 +75,8 @@ gtag('js', new Date());
 gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -116,7 +86,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">AsquirousSpeaks</span>
     </a>
   </div>
@@ -127,7 +97,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -149,280 +119,120 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Distillation: ULMFIT</h1>
+                  <div>
+        <div class="description">
+          Summary of the ULMFIT paper by J. Howard and S. Ruder.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">NLP</div>
+                <div class="quarto-category">Research</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Suchit G </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 2, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Beginner">Beginner <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ComputerVision">ComputerVision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Data Processing">Data Processing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Experience">Experience <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLP">NLP <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Neural Networks">Neural Networks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Research">Research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fast.ai">fast.ai <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#fine-tuning" id="toc-fine-tuning" class="nav-link" data-scroll-target="#fine-tuning">Fine-tuning</a></li>
+  <li><a href="#language-model-lm" id="toc-language-model-lm" class="nav-link" data-scroll-target="#language-model-lm">Language Model (LM)</a></li>
+  </ul></li>
+  <li><a href="#how-ulmfit-works" id="toc-how-ulmfit-works" class="nav-link" data-scroll-target="#how-ulmfit-works">How ULMFIT works?</a>
+  <ul class="collapse">
+  <li><a href="#pre-training-lm-on-general-domain-text-corpus" id="toc-pre-training-lm-on-general-domain-text-corpus" class="nav-link" data-scroll-target="#pre-training-lm-on-general-domain-text-corpus">1. Pre-training LM on general domain text corpus</a></li>
+  <li><a href="#fine-tuning-lm-on-target-task-text-corpus" id="toc-fine-tuning-lm-on-target-task-text-corpus" class="nav-link" data-scroll-target="#fine-tuning-lm-on-target-task-text-corpus">2. Fine-tuning LM on target task text corpus</a>
+  <ul class="collapse">
+  <li><a href="#discriminative-fine-tuning" id="toc-discriminative-fine-tuning" class="nav-link" data-scroll-target="#discriminative-fine-tuning">Discriminative fine-tuning</a></li>
+  <li><a href="#slanted-triangular-learning-rates-sltr" id="toc-slanted-triangular-learning-rates-sltr" class="nav-link" data-scroll-target="#slanted-triangular-learning-rates-sltr">Slanted triangular learning rates (SLTR)</a></li>
+  </ul></li>
+  <li><a href="#fine-tuning-text-classifier-on-labelled-test-corpus" id="toc-fine-tuning-text-classifier-on-labelled-test-corpus" class="nav-link" data-scroll-target="#fine-tuning-text-classifier-on-labelled-test-corpus">3. Fine-tuning text classifier on labelled test corpus</a>
+  <ul class="collapse">
+  <li><a href="#gradual-unfreezing" id="toc-gradual-unfreezing" class="nav-link" data-scroll-target="#gradual-unfreezing">Gradual unfreezing</a></li>
+  <li><a href="#bidirectional-lm" id="toc-bidirectional-lm" class="nav-link" data-scroll-target="#bidirectional-lm">Bidirectional LM</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="fine-tuning" class="level2">
+<h2 class="anchored" data-anchor-id="fine-tuning">Fine-tuning</h2>
+</section>
+<section id="language-model-lm" class="level2">
+<h2 class="anchored" data-anchor-id="language-model-lm">Language Model (LM)</h2>
+</section>
+</section>
+<section id="how-ulmfit-works" class="level1">
+<h1>How ULMFIT works?</h1>
+<section id="pre-training-lm-on-general-domain-text-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="pre-training-lm-on-general-domain-text-corpus">1. Pre-training LM on general domain text corpus</h2>
+</section>
+<section id="fine-tuning-lm-on-target-task-text-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="fine-tuning-lm-on-target-task-text-corpus">2. Fine-tuning LM on target task text corpus</h2>
+<section id="discriminative-fine-tuning" class="level3">
+<h3 class="anchored" data-anchor-id="discriminative-fine-tuning">Discriminative fine-tuning</h3>
+</section>
+<section id="slanted-triangular-learning-rates-sltr" class="level3">
+<h3 class="anchored" data-anchor-id="slanted-triangular-learning-rates-sltr">Slanted triangular learning rates (SLTR)</h3>
+</section>
+</section>
+<section id="fine-tuning-text-classifier-on-labelled-test-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="fine-tuning-text-classifier-on-labelled-test-corpus">3. Fine-tuning text classifier on labelled test corpus</h2>
+<section id="gradual-unfreezing" class="level3">
+<h3 class="anchored" data-anchor-id="gradual-unfreezing">Gradual unfreezing</h3>
+</section>
+<section id="bidirectional-lm" class="level3">
+<h3 class="anchored" data-anchor-id="bidirectional-lm">Bidirectional LM</h3>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
 
 
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="NLP,Research" data-listing-date-sort="1698863400000" data-listing-file-modified-sort="1698216458187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/ulmfit/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/ulmfit/index.html">
-<h3 class="no-anchor listing-title">
-Distillation: ULMFIT
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('NLP'); return false;">
-NLP
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
-Research
-</div>
-</div>
-<a href="./posts/ulmfit/index.html">
-<div class="listing-description">
-<p>Summary of the ULMFIT paper by J. Howard and S. Ruder.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/ulmfit/index.html">
-<div class="listing-date">
-Nov 2, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Beginner,NLP" data-listing-date-sort="1697135400000" data-listing-file-modified-sort="1698212984702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/nlp-terms/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/nlp-terms/index.html">
-<h3 class="no-anchor listing-title">
-Intro to NLP
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NLP'); return false;">
-NLP
-</div>
-</div>
-<a href="./posts/nlp-terms/index.html">
-<div class="listing-description">
-<p>Some fundamental terms and concepts related to NLP/LMs.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/nlp-terms/index.html">
-<div class="listing-date">
-Oct 13, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Neural Networks,fast.ai,ComputerVision" data-listing-date-sort="1694197800000" data-listing-file-modified-sort="1698212984702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
-<div class="thumbnail">
-<p><a href="./posts/mnist/index.html"> <p class="card-img-top"><img src="posts/mnist/index_files/figure-html/cell-6-output-2.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/mnist/index.html">
-<h3 class="no-anchor listing-title">
-Classifying handwritten digits (THE MNIST!)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Neural Networks'); return false;">
-Neural Networks
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fast.ai'); return false;">
-fast.ai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ComputerVision'); return false;">
-ComputerVision
-</div>
-</div>
-<a href="./posts/mnist/index.html">
-<div class="listing-description">
-<p>Understand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/mnist/index.html">
-<div class="listing-date">
-Sep 9, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Data Processing,Beginner" data-listing-date-sort="1687804200000" data-listing-file-modified-sort="1698212984698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="./posts/data-cleaning/index.html"> <img src="./posts/data-cleaning/pexels-elīna-arāja-3336523.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/data-cleaning/index.html">
-<h3 class="no-anchor listing-title">
-Data Cleaning and Augmentation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Data Processing'); return false;">
-Data Processing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-</div>
-<a href="./posts/data-cleaning/index.html">
-<div class="listing-description">
-<p>The counter-intuitive idea of data cleaning after training a model and creating data by ourselves.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/data-cleaning/index.html">
-<div class="listing-date">
-Jun 27, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Beginner,ComputerVision,fast.ai" data-listing-date-sort="1685298600000" data-listing-file-modified-sort="1698212984725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="./posts/tvdesktopclassifier/index.html"> <img src="./posts/tvdesktopclassifier/google_deepmind.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/tvdesktopclassifier/index.html">
-<h3 class="no-anchor listing-title">
-Train your first image classifier (AI) model!
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ComputerVision'); return false;">
-ComputerVision
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fast.ai'); return false;">
-fast.ai
-</div>
-</div>
-<a href="./posts/tvdesktopclassifier/index.html">
-<div class="listing-description">
-<p>Get a taste of AI/deep learning with this simple tutorial that trains an image classifier model!</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/tvdesktopclassifier/index.html">
-<div class="listing-date">
-May 29, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Experience" data-listing-date-sort="1684089000000" data-listing-file-modified-sort="1698212984728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Hey yo! Welcome to my blog peeps!
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Experience'); return false;">
-Experience
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-<p>Hiya! Know more about my blog!</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-May 15, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
