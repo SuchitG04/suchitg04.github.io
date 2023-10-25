@@ -1,5 +1,5 @@
 ---
-title: "Distillation: ULMFIT"
+title: "Distillation: ULMFiT"
 toc: true
 date: "2023-11-2"
 draft: true
