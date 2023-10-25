@@ -2,6 +2,7 @@
 title: "Distillation: ULMFIT"
 toc: true
 date: "2023-11-2"
+draft: true
 author: Suchit G
 description: Summary of the ULMFIT paper by J. Howard and S. Ruder.
 categories:
