@@ -1,0 +1,148 @@
+---
+title: TabularModel Deep Dive
+toc: true
+date: "2023-12-02"
+author: Suchit G
+description: A detailed explanation of the fast.ai TabularModel class.
+categories:
+    - Tabular
+    - Neural Networks
+    - fast.ai
+    - Code
+---
+
+## Introduction
+
+In this post, I will attempt to explain the TabularModel class in fast.ai as part of the "Further Research" assignment in [chapter 9](https://github.com/fastai/fastbook/blob/master/09_tabular.ipynb) of the fastbook.
+
+*Disclaimer: This post is inspired by another wonderful [blog post](http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/) explaining the same.*
+
+Here's the code of TabularModel class pasted as is:
+
+```python
+class TabularModel(Module):
+    "Basic model for tabular data."
+    def __init__(self, 
+        emb_szs:list, # Sequence of (num_embeddings, embedding_dim) for each categorical variable
+        n_cont:int, # Number of continuous variables
+        out_sz:int, # Number of outputs for final `LinBnDrop` layer
+        layers:list, # Sequence of ints used to specify the input and output size of each `LinBnDrop` layer
+        ps:float|MutableSequence=None, # Sequence of dropout probabilities for `LinBnDrop`
+        embed_p:float=0., # Dropout probability for `Embedding` layer
+        y_range=None, # Low and high for `SigmoidRange` activation 
+        use_bn:bool=True, # Use `BatchNorm1d` in `LinBnDrop` layers
+        bn_final:bool=False, # Use `BatchNorm1d` on final layer
+        bn_cont:bool=True, # Use `BatchNorm1d` on continuous variables
+        act_cls=nn.ReLU(inplace=True), # Activation type for `LinBnDrop` layers
+        lin_first:bool=True # Linear layer is first or last in `LinBnDrop` layers
+    ):
+        ps = ifnone(ps, [0]*len(layers))
+        if not is_listy(ps): ps = [ps]*len(layers)
+        self.embeds = nn.ModuleList([Embedding(ni, nf) for ni,nf in emb_szs])
+        self.emb_drop = nn.Dropout(embed_p)
+        self.bn_cont = nn.BatchNorm1d(n_cont) if bn_cont else None
+        n_emb = sum(e.embedding_dim for e in self.embeds)
+        self.n_emb,self.n_cont = n_emb,n_cont
+        sizes = [n_emb + n_cont] + layers + [out_sz]
+        actns = [act_cls for _ in range(len(sizes)-2)] + [None]
+        _layers = [LinBnDrop(sizes[i], sizes[i+1], bn=use_bn and (i!=len(actns)-1 or bn_final), p=p, act=a, lin_first=lin_first)
+                       for i,(p,a) in enumerate(zip(ps+[0.],actns))]
+        if y_range is not None: _layers.append(SigmoidRange(*y_range))
+        self.layers = nn.Sequential(*_layers)
+
+    def forward(self, x_cat, x_cont=None):
+        if self.n_emb != 0:
+            x = [e(x_cat[:,i]) for i,e in enumerate(self.embeds)]
+            x = torch.cat(x, 1)
+            x = self.emb_drop(x)
+        if self.n_cont != 0:
+            if self.bn_cont is not None: x_cont = self.bn_cont(x_cont)
+            x = torch.cat([x, x_cont], 1) if self.n_emb != 0 else x_cont
+        return self.layers(x)
+```
+
+I will go through every (necessary) line of code but will refer you to [this post](http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/) if you want to see the outputs each line of code gives. 
+
+## `__init__`
+
+### `ps`
+---
+
+This line of code assigns an array of zeroes of length layers if `ps=None`.
+
+```python
+ps = ifnone(ps, [0]*len(layers))
+```
+
+I'm not entirely sure as to what this line does, but I think it creates an array of same valued `ps` of length `layers` if `ps` is a list.
+
+```python
+if not is_listy(ps): ps = [ps]*len(layers)
+```
+
+### `embeds`
+---
+
+```python
+self.embeds = nn.ModuleList([Embedding(ni, nf) for ni,nf in emb_szs])
+self.emb_drop = nn.Dropout(embed_p)
+self.bn_cont = nn.BatchNorm1d(n_cont) if bn_cont else None
+n_emb = sum(e.embedding_dim for e in self.embeds)
+self.n_emb,self.n_cont = n_emb,n_cont
+```
+
+If you notice `emb_szs` doesn't have a default value assigned. This is because (AFAIK) `TabularModel` is not used directly, but used with `tabular_learner`. `emb_szs` are calculated inside `tabular_learner` using categorical data.
+```python
+emb_szs = get_emb_sz(dls.train_ds, {} if emb_szs is None else emb_szs)
+```
+
+In `self.embeds = nn.ModuleList(...)` embeddings (`nn.Embedding`) are created based on the sizes in `emb_szs` and are "packaged" together.
+
+`self.emb_drop = nn.Dropout(...)` (acc. to the documentation) randomly zeroes out the input tensors based on the probabilities in `embed_p`.
+
+I have no clue about `nn.BatchNorm1d` 😅.
+
+`n_emb` gets assigned the total number of embedding dimensions.
+```python
+emb_szs = [(4, 2), (5, 3)]
+embeds = nn.ModuleList([Embedding(ni, nf) for ni,nf in emb_szs])
+n_emb = sum(e.embedding_dim for e in embeds)
+print(n_emb)
+```
+```
+ModuleList(
+  (0): Embedding(4, 2)
+  (1): Embedding(5, 3)
+)
+```
+
+### `layers`
+---
+
+```python
+sizes = [n_emb + n_cont] + layers + [out_sz]
+actns = [act_cls for _ in range(len(sizes)-2)] + [None]
+_layers = [LinBnDrop(sizes[i], sizes[i+1], bn=use_bn and (i!=len(actns)-1 or bn_final), p=p, act=a, lin_first=lin_first)
+for i,(p,a) in enumerate(zip(ps+[0.],actns))]
+if y_range is not None: _layers.append(SigmoidRange(*y_range))
+self.layers = nn.Sequential(*_layers)
+```
+
+Assuming `n_emb=5, n_cont=1, layers=[100, 50], out_sz=1`, then `sizes = [6, 100, 50, 1]`.
+
+`actns` holds the activation function to be used between each layers. In this case, it holds:
+```
+[ReLU(inplace=True), ReLU(inplace=True), None]
+```
+
+In the 3<sup>rd</sup> line, `_layers` gets assigned a "grouping" of `BatchNorm1d`, `Dropout` and `Linear` layers. This is where we understand why sizes is assigned such values. The first two arguments passed to `LinBnDrop` specify the number of input and output neurons respectively.
+
+The activations are passed through `act=a` where `a` is an object enumerated from the `zip` of `ps` and `actns`. The first `ReLU` activation is applied between layers of size 6 and 100, and the second between layers of size 100 and 50. `actns` has its third element as `None` because there isn't supposed to be any activation function between the last two layers (of size 50 and 1, in this case).
+
+In the same line, there's a `bn` parameter that says whether to use `batchnorm` after the current layer (`i`). If `use_bn` is `False`, then it isn't used. If it is `True`, and one of `i!=len(actns)-1` (if `i!=2` or if `i`, the current layer, isn't the 2<sup>nd</sup> to last layer) or `bn_final` is `True`, then `batchnorm` is used.
+
+I refer you to [Vishal's post](http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/#layers) I put in the disclaimer earlier if you aren't satisfied with this explanation.
+
+The next line appends a `SigmoidRange` function that limits the output values within the specified range. And finally, the last line wraps all the layers in `nn.Sequential`.
+
+
