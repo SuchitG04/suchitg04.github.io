@@ -212,6 +212,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
   <li><a href="#prepping-categorical-variables" id="toc-prepping-categorical-variables" class="nav-link" data-scroll-target="#prepping-categorical-variables">Prepping categorical variables</a></li>
   <li><a href="#prepping-continous-variables" id="toc-prepping-continous-variables" class="nav-link" data-scroll-target="#prepping-continous-variables">Prepping continous variables</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -323,6 +324,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="forward"><code>forward</code></h2>
 <section id="prepping-categorical-variables" class="level3">
 <h3 class="anchored" data-anchor-id="prepping-categorical-variables">Prepping categorical variables</h3>
+<hr>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [e(x_cat[:,i]) <span class="cf">for</span> i,e <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="va">self</span>.embeds)]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.cat(x, <span class="dv">1</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">self</span>.emb_drop(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -330,13 +332,25 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </section>
 <section id="prepping-continous-variables" class="level3">
 <h3 class="anchored" data-anchor-id="prepping-continous-variables">Prepping continous variables</h3>
+<hr>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">self</span>.bn_cont <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: x_cont <span class="op">=</span> <span class="va">self</span>.bn_cont(x_cont)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.cat([x, x_cont], <span class="dv">1</span>) <span class="cf">if</span> <span class="va">self</span>.n_emb <span class="op">!=</span> <span class="dv">0</span> <span class="cf">else</span> x_cont</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the first line, <code>x_cont = self.bn_cont(x_cont)</code> is run if <code>bn_cont</code> (a parameter to <code>TabularModel</code>) is not <code>None</code>. Next, <code>x_cont</code> is concatenated to <code>x</code> which has the categorical embeddings if <code>self.n_emb</code> is not 0. Otherwise, <code>x_cont</code> is assigned to <code>x</code>.</p>
 <p>Finally, <code>x</code> is passed to <code>self.layers</code> which is essentially the model with <code>BatchNorm1d</code>, <code>Dropout</code> and <code>Linear</code> layers and the output is returned.</p>
-
-
 </section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<hr>
+<p>This was a challenging exercise that filled gaps in my understanding of python and also taught me how Neural Networks are used on tabular datasets. Again, <a href="http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/">this post</a> helped me a lot with my understanding.</p>
+<p>Thank you for reading my blog. You can reach out to me through my socials here:</p>
+<ul>
+<li>Discord - “lostsquid.”</li>
+<li>LinkedIn - /in/suchitg04/</li>
+</ul>
+<p>I hope to see you soon. Until then 👋</p>
+
+
 </section>
 
 </main> <!-- /main -->

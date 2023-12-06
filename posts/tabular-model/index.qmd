@@ -2,7 +2,6 @@
 title: TabularModel Deep Dive
 toc: true
 date: "2023-12-02"
-draft: true
 author: Suchit G
 description: A detailed explanation of the fast.ai TabularModel class.
 categories:
@@ -104,6 +103,7 @@ In `self.embeds = nn.ModuleList(...)` embeddings (`nn.Embedding`) are created ba
 I have no clue about `nn.BatchNorm1d` 😅.
 
 `n_emb` gets assigned the total number of embedding dimensions.
+
 ```python
 emb_szs = [(4, 2), (5, 3)]
 embeds = nn.ModuleList([Embedding(ni, nf) for ni,nf in emb_szs])
@@ -149,6 +149,7 @@ The next line appends a `SigmoidRange` function that limits the output values wi
 ## `forward`
 
 ### Prepping categorical variables
+---
 
 ```python
 x = [e(x_cat[:,i]) for i,e in enumerate(self.embeds)]
@@ -159,6 +160,7 @@ x = self.emb_drop(x)
 Firstly, embeddings for `x_cat` are created and stored in `x`. Then they are concanetated along the columns into a single tensor. `Dropout` layers are added in the next line based on `embed_p`.
 
 ### Prepping continous variables
+---
 
 ```python
 if self.bn_cont is not None: x_cont = self.bn_cont(x_cont)
@@ -168,3 +170,15 @@ x = torch.cat([x, x_cont], 1) if self.n_emb != 0 else x_cont
 In the first line, `x_cont = self.bn_cont(x_cont)` is run if `bn_cont` (a parameter to `TabularModel`) is not `None`. Next, `x_cont` is concatenated to `x` which has the categorical embeddings if `self.n_emb` is not 0. Otherwise, `x_cont` is assigned to `x`.
 
 Finally, `x` is passed to `self.layers` which is essentially the model with `BatchNorm1d`, `Dropout` and `Linear` layers and the output is returned.
+
+## Conclusion
+---
+
+This was a challenging exercise that filled gaps in my understanding of python and also taught me how Neural Networks are used on tabular datasets. Again, [this post](http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/) helped me a lot with my understanding.
+
+Thank you for reading my blog. You can reach out to me through my socials here:
+
+- Discord - "lostsquid."
+- LinkedIn - /in/suchitg04/
+
+I hope to see you soon. Until then 👋
