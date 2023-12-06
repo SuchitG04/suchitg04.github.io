@@ -172,7 +172,6 @@ In the first line, `x_cont = self.bn_cont(x_cont)` is run if `bn_cont` (a parame
 Finally, `x` is passed to `self.layers` which is essentially the model with `BatchNorm1d`, `Dropout` and `Linear` layers and the output is returned.
 
 ## Conclusion
----
 
 This was a challenging exercise that filled gaps in my understanding of python and also taught me how Neural Networks are used on tabular datasets. Again, [this post](http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/) helped me a lot with my understanding.
 
