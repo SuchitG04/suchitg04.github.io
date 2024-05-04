@@ -2,12 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/diffedit/diffedit-blog.html",
       "/posts/tabular-model/index.html",
       "/posts/nlp-terms/index.html",
       "/posts/mnist/index.html",
       "/posts/data-cleaning/index.html",
       "/posts/tvdesktopclassifier/index.html",
-      "/posts/welcome/index.html"
+      "/posts/my-journey/index.html",
+      "/posts/welcome/index.html",
+      "/posts/post-with-code/index.html"
     ]
   }
 ]
