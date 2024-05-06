@@ -8,7 +8,6 @@ categories:
     - Tabular
     - Neural Networks
     - fast.ai
-    - Code
 ---
 
 ## Introduction
