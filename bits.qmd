@@ -1,0 +1,10 @@
+---
+title: "Bits"
+listing:
+  contents: bits
+  type: default
+  sort-ui: true
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+---

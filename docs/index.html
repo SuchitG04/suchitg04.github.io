@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.32">
+<meta name="generator" content="quarto-1.5.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Asquirous</title>
+<title>Asquirous – About me!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,12 +31,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon-32x32_vapor2.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -71,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3FN26ZGN6Q"></script>
 
 <script type="text/javascript">
@@ -110,40 +78,11 @@ gtag('js', new Date());
 gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -159,18 +98,24 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./bits.html"> 
+<span class="menu-text">Bits</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/SuchitG04/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/asquirous/"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/asquirous/"> <i class="bi bi-twitter-x" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -183,308 +128,69 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Beginner">Beginner <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ComputerVision">ComputerVision <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Data Processing">Data Processing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Experience">Experience <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLP">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Neural Networks">Neural Networks <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Paper Implementation">Paper Implementation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Stable Diffusion">Stable Diffusion <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tabular">Tabular <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fast.ai">fast.ai <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
+<div class="quarto-about-solana column-body">
+  <div class="about-entity">
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">About me!</h1>
+</div>
+<div class="quarto-title-meta">
+  </div>
+</header> <div class="about-links">
+  <a href="https://twitter.com/asquirous" class="about-link" rel="" target="">
+    <i class="bi bi-twitter"></i>
+     <span class="about-link-text">X</span>
+  </a>
+  <a href="https://linkedin.com/in/suchitg04" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://github.com/SuchitG04" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+      <div class="about-contents"><div id="main">
+<p>Salut! Je m’appelle Suchit! I am a CS engineering sophomore at Ramaiah Institute of Technology at the <em>Silicon Valley</em> of India, Bangalore.</p>
+<p>I have a strong interest in pursuing a research career in the field of Deep Learning and love the notion of humans working alongside AI. I wish to create AI systems to enhance just about any aspect of the human life.</p>
+<section id="education" class="level2">
+<h2 data-anchor-id="education">Education</h2>
+<p><strong>M S Ramaiah Institute of Technology</strong> | Bangalore, India</p>
+<p>B.E. in Information Science | Dec 2022 - Present (expected: 2026)</p>
+</section>
+<section id="experience" class="level2">
+<h2 data-anchor-id="experience">Experience</h2>
+<p><strong>Mukti (FOSS Club)</strong> | Core Member | Aug 2023 - Feb 2024</p>
+<p>Visit the <a href="https://advaita-io.github.io/advAIta-io/">advAIta</a> community that’s the collective effort of many at my college!</p>
+</section>
+</div></div>
+    </div>
+    <img src="profile1.jpg" class="about-image
+  rounded " style="width: 15em;">
   </div>
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Stable Diffusion,Paper Implementation" data-listing-date-sort="1714761000000" data-listing-file-modified-sort="1715182534841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1853">
-<div class="thumbnail">
-<p><a href="./posts/diffedit/diffedit-blog.html" class="no-external"></a></p><a href="./posts/diffedit/diffedit-blog.html" class="no-external">
-<p><img loading="lazy" src="./posts/diffedit/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/diffedit/diffedit-blog.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/diffedit/diffedit-blog.html" class="no-external">DiffEdit Paper Implementation</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/diffedit/diffedit-blog.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Stable Diffusion'); return false;">
-Stable Diffusion
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Paper Implementation'); return false;">
-Paper Implementation
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/diffedit/diffedit-blog.html" class="no-external">This was more mind-bending than I expected 😅. Watch me as I make it seem so simple in this blog 😎</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/diffedit/diffedit-blog.html" class="no-external">
-<div class="listing-date">
-May 4, 2024
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Tabular,Neural Networks,fast.ai" data-listing-date-sort="1701455400000" data-listing-file-modified-sort="1715001514405" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1252">
-<div class="thumbnail">
-<p><a href="./posts/tabular-model/index.html" class="no-external"></a></p><a href="./posts/tabular-model/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/tabular-model/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/tabular-model/index.html" class="no-external">TabularModel Deep Dive</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/tabular-model/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tabular'); return false;">
-Tabular
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Neural Networks'); return false;">
-Neural Networks
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fast.ai'); return false;">
-fast.ai
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/tabular-model/index.html" class="no-external">A detailed explanation of the fast.ai TabularModel class.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/tabular-model/index.html" class="no-external">
-<div class="listing-date">
-Dec 2, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Beginner,NLP" data-listing-date-sort="1697135400000" data-listing-file-modified-sort="1698212984702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="753">
-<div class="thumbnail">
-<p><a href="./posts/nlp-terms/index.html" class="no-external"></a></p><a href="./posts/nlp-terms/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/nlp-terms/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nlp-terms/index.html" class="no-external">Intro to NLP</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nlp-terms/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NLP'); return false;">
-NLP
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/nlp-terms/index.html" class="no-external">Some fundamental terms and concepts related to NLP/LMs.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/nlp-terms/index.html" class="no-external">
-<div class="listing-date">
-Oct 13, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Neural Networks,fast.ai,ComputerVision" data-listing-date-sort="1694197800000" data-listing-file-modified-sort="1698212984702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1210">
-<div class="thumbnail">
-<p><a href="./posts/mnist/index.html" class="no-external"></a></p><a href="./posts/mnist/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/mnist/index_files/figure-html/cell-6-output-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/mnist/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/mnist/index.html" class="no-external">Classifying handwritten digits (THE MNIST!)</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/mnist/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Neural Networks'); return false;">
-Neural Networks
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fast.ai'); return false;">
-fast.ai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ComputerVision'); return false;">
-ComputerVision
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/mnist/index.html" class="no-external">Understand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/mnist/index.html" class="no-external">
-<div class="listing-date">
-Sep 9, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Data Processing,Beginner" data-listing-date-sort="1687804200000" data-listing-file-modified-sort="1698212984698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="539">
-<div class="thumbnail">
-<p><a href="./posts/data-cleaning/index.html" class="no-external"></a></p><a href="./posts/data-cleaning/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/data-cleaning/pexels-elīna-arāja-3336523.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/data-cleaning/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/data-cleaning/index.html" class="no-external">Data Cleaning and Augmentation</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/data-cleaning/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Data Processing'); return false;">
-Data Processing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/data-cleaning/index.html" class="no-external">The counter-intuitive idea of data cleaning after training a model and creating data by ourselves.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/data-cleaning/index.html" class="no-external">
-<div class="listing-date">
-Jun 27, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Beginner,ComputerVision,fast.ai" data-listing-date-sort="1685298600000" data-listing-file-modified-sort="1698212984725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="486">
-<div class="thumbnail">
-<p><a href="./posts/tvdesktopclassifier/index.html" class="no-external"></a></p><a href="./posts/tvdesktopclassifier/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/tvdesktopclassifier/google_deepmind.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/tvdesktopclassifier/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/tvdesktopclassifier/index.html" class="no-external">Train your first image classifier (AI) model!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/tvdesktopclassifier/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Beginner'); return false;">
-Beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ComputerVision'); return false;">
-ComputerVision
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fast.ai'); return false;">
-fast.ai
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/tvdesktopclassifier/index.html" class="no-external">Get a taste of AI/deep learning with this simple tutorial that trains an image classifier model!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/tvdesktopclassifier/index.html" class="no-external">
-<div class="listing-date">
-May 29, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Experience" data-listing-date-sort="1684089000000" data-listing-file-modified-sort="1698212984728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="144">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/welcome/thumbnail.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Hey yo! Welcome to my blog peeps!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Experience'); return false;">
-Experience
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/welcome/index.html" class="no-external">Hiya! Know more about my blog!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-May 15, 2023
-</div>
-<div class="listing-author">
-Suchit G
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+<section id="more-about-me" class="level2">
+<h2 data-anchor-id="more-about-me">More about me</h2>
+<p>I’m of the tinkering and learning species and my current interests include Machine Learning, reading fiction, learning French and playing the Guitar! I am currently taking the fastai course where I am enjoying the top-down learning and iterative approach by the course.</p>
+<p>I blog about what I think is interesting, and worth remembering and putting out there for others. Feel free to DM me if you’d like to add a section to one of my posts or if you just want to say HI or talk about anything else!</p>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -649,13 +355,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

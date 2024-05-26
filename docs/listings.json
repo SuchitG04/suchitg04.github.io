@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/diffedit/diffedit-blog.html",
       "/posts/tabular-model/index.html",
@@ -10,5 +10,9 @@
       "/posts/tvdesktopclassifier/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/bits.html",
+    "items": []
   }
 ]

@@ -7,11 +7,15 @@ website:
   title: "Asquirous"
   favicon: favicon-32x32_vapor2.png
   navbar:
+    left:
+      - text: Blog
+        href: blog.qmd
+      - text: Bits
+        href: bits.qmd
     right:
-      - about.qmd
       - icon: github
         href: https://github.com/SuchitG04/
-      - icon: twitter
+      - icon: twitter-x
         href: https://twitter.com/asquirous/
 format:
   html:
