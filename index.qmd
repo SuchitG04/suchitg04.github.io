@@ -34,12 +34,12 @@ B.E. in Information Science | Dec 2022 - Present (expected: 2026)
 **Mukti (FOSS Club)** | Core Member | Aug 2023 - Feb 2024
 
 
-Visit the [advAIta](https://advaita-io.github.io/) community that's the collective effort of many at my college!
+Visit [advAIta](https://advaita-io.github.io/) started by me as a [fast.ai](https://course.fast.ai) study group, now turned to a general AI/DL community, that's the collective effort of many at my college!
 
 :::
 
 ## More about me
 
-I'm of the tinkering and learning species and my current interests include Machine Learning, reading fiction, learning French and playing the Guitar! I am currently taking the fastai course where I am enjoying the top-down learning and iterative approach by the course.
+I'm of the tinkering and learning species and my current interests include Machine Learning, reading anything that seems interesting to me (including but not limited to psychology and self-help books, fiction, and half-assing CS books), learning French and playing the Guitar! I am currently taking the fastai course where I am enjoying the top-down learning and iterative approach by the course.
 
-I blog about what I think is interesting, and worth remembering and putting out there for others. Feel free to DM me if you'd like to add a section to one of my posts or if you just want to say HI or talk about anything else!
+I blog about what I think is interesting, worth remembering and putting it out there for primarily myself in the hope that it's also useful for others. Feel free to DM or raise a PR in case for any edits/suggestions/additions to one of my posts or if you just want to say HI or talk about anything else (or even offer me an internship ;) )!
