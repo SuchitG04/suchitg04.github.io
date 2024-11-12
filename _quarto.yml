@@ -17,6 +17,8 @@ website:
         href: https://github.com/SuchitG04/
       - icon: twitter-x
         href: https://twitter.com/asquirous/
+  drafts:
+    - posts/backprop/draft.qmd
 format:
   html:
     theme:

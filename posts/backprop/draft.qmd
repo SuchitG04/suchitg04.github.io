@@ -3,10 +3,10 @@ title: Let's Backprop
 toc: true
 author: Suchit G
 description: A guide to understanding backprop intuitively.
+draft: true
 categories:
     - Neural Networks
     - Math
-draft: true
 ---
 
 To get the most out of this guide, you'll need to know what layers are in neural networks. That's all. That's the only peculiar requirement to understand this post.
