@@ -4,14 +4,35 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nDiffEdit Paper Implementation\n\n\n\n\n\n\nStable Diffusion\n\n\nPaper Implementation\n\n\n\nThis was more mind-bending than I expected 😅. Watch me as I make it seem so simple in this blog 😎\n\n\n\n\n\nMay 4, 2024\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nTabularModel Deep Dive\n\n\n\n\n\n\nTabular\n\n\nNeural Networks\n\n\nfast.ai\n\n\n\nA detailed explanation of the fast.ai TabularModel class.\n\n\n\n\n\nDec 2, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to NLP\n\n\n\n\n\n\nBeginner\n\n\nNLP\n\n\n\nSome fundamental terms and concepts related to NLP/LMs.\n\n\n\n\n\nOct 13, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nClassifying handwritten digits (THE MNIST!)\n\n\n\n\n\n\nNeural Networks\n\n\nfast.ai\n\n\nComputerVision\n\n\n\nUnderstand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!\n\n\n\n\n\nSep 9, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nData Cleaning and Augmentation\n\n\n\n\n\n\nData Processing\n\n\nBeginner\n\n\n\nThe counter-intuitive idea of data cleaning after training a model and creating data by ourselves.\n\n\n\n\n\nJun 27, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nTrain your first image classifier (AI) model!\n\n\n\n\n\n\nBeginner\n\n\nComputerVision\n\n\nfast.ai\n\n\n\nGet a taste of AI/deep learning with this simple tutorial that trains an image classifier model!\n\n\n\n\n\nMay 29, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nHey yo! Welcome to my blog peeps!\n\n\n\n\n\n\nExperience\n\n\n\nHiya! Know more about my blog!\n\n\n\n\n\nMay 15, 2023\n\n\nSuchit G\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nLet’s Backprop\n\n\n\n\n\n\nNeural Networks\n\n\nMath\n\n\n\nA guide to understanding backprop intuitively.\n\n\n\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nDiffEdit Paper Implementation\n\n\n\n\n\n\nStable Diffusion\n\n\nPaper Implementation\n\n\n\nThis was more mind-bending than I expected 😅. Watch me as I make it seem so simple in this blog 😎\n\n\n\n\n\nMay 4, 2024\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nTabularModel Deep Dive\n\n\n\n\n\n\nTabular\n\n\nNeural Networks\n\n\nfast.ai\n\n\n\nA detailed explanation of the fast.ai TabularModel class.\n\n\n\n\n\nDec 2, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nIntro to NLP\n\n\n\n\n\n\nBeginner\n\n\nNLP\n\n\n\nSome fundamental terms and concepts related to NLP/LMs.\n\n\n\n\n\nOct 13, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nClassifying handwritten digits (THE MNIST!)\n\n\n\n\n\n\nNeural Networks\n\n\nfast.ai\n\n\nComputerVision\n\n\n\nUnderstand the fundamental structure of a ML project by building a simple neural network on the MNIST dataset!\n\n\n\n\n\nSep 9, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nData Cleaning and Augmentation\n\n\n\n\n\n\nData Processing\n\n\nBeginner\n\n\n\nThe counter-intuitive idea of data cleaning after training a model and creating data by ourselves.\n\n\n\n\n\nJun 27, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nTrain your first image classifier (AI) model!\n\n\n\n\n\n\nBeginner\n\n\nComputerVision\n\n\nfast.ai\n\n\n\nGet a taste of AI/deep learning with this simple tutorial that trains an image classifier model!\n\n\n\n\n\nMay 29, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nNew to CS/tech? Here’s my journey so far\n\n\n\n\n\n\nExperience\n\n\nAdvice\n\n\nJourney\n\n\n\nIt’s been more than two years since the first time I got lustfully 🤤 attracted to CS…\n\n\n\n\n\nMay 18, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nHey yo! Welcome to my blog peeps!\n\n\n\n\n\n\nExperience\n\n\n\nHiya! Know more about my blog!\n\n\n\n\n\nMay 15, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nMay 14, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "bits.html",
-    "href": "bits.html",
-    "title": "Bits",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About me!",
     "section": "",
-    "text": "No matching items"
+    "text": "X\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n\n      \nSalut! Je m’appelle Suchit! I am a CS engineering sophomore at Ramaiah Institute of Technology at the Silicon Valley of India, Bangalore.\nI have a strong interest in pursuing a research career in the field of Deep Learning and love the notion of humans working alongside AI. I wish to create AI systems to enhance just about any aspect of the human life.\n\n\nM S Ramaiah Institute of Technology | Bangalore, India\nB.E. in Information Science | Dec 2022 - Present (expected: 2026)\n\n\n\nMukti (FOSS Club) | Core Member | Aug 2023 - Feb 2024\nVisit advAIta started by me as a fast.ai study group, now turned to a general AI/DL community, that’s the collective effort of many at my college!"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "About me!",
+    "section": "",
+    "text": "M S Ramaiah Institute of Technology | Bangalore, India\nB.E. in Information Science | Dec 2022 - Present (expected: 2026)"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "About me!",
+    "section": "",
+    "text": "Mukti (FOSS Club) | Core Member | Aug 2023 - Feb 2024\nVisit advAIta started by me as a fast.ai study group, now turned to a general AI/DL community, that’s the collective effort of many at my college!"
+  },
+  {
+    "objectID": "index.html#more-about-me",
+    "href": "index.html#more-about-me",
+    "title": "About me!",
+    "section": "More about me",
+    "text": "More about me\nI’m of the tinkering and learning species and my current interests include Machine Learning, reading anything that seems interesting to me (including but not limited to psychology and self-help books, fiction, and half-assing CS books), learning French and playing the Guitar! I am currently taking the fastai course where I am enjoying the top-down learning and iterative approach by the course.\nI blog about what I think is interesting, worth remembering and putting it out there for primarily myself in the hope that it’s also useful for others. Feel free to DM or raise a PR in case for any edits/suggestions/additions to one of my posts or if you just want to say HI or talk about anything else (or even offer me an internship ;) )!"
   },
   {
     "objectID": "posts/tvdesktopclassifier/index.html",
@@ -231,31 +252,17 @@
     "text": "How do LMs work?\nBaseline and/or task-agnostic LMs are trained to predict the “next words” after the input. That is, the next words are the “dependent variables”, commonly denoted by y. This technique helps the LMs capture the relationship between words and the models can even generate coherent sentences for a few 10s of words (these models by themselves do not work like ChatGPT does just because they can generate text. That’s a topic of discussion for another day).\n\nInput to LMs (Embeddings)\nIt is tempting to think that these (numericalized) tokens are used as it is as numbers (as was the case with me). This (also embedded below) wonderful video by StatQuest helped me understand how the inputs work for LMs. The essence of the video is that LMs are first trained to learn the embeddings of the words (before any downstream task, like classification). Each word’s embedding is in the form of a vector in a n-dimensional vector space. More similar the words, closer are their vector representations.\n\n\n\n\n\n\n\nNerdy words alert\n\n\n\n\n\n\nVector: Any quantity that has quantity and direction, in the most basic sense. In this case, a list of numbers which when converted to a arrow-like thing, points in a particular direction and has a particular length.\nn-dimensional space: Know about 2D and 3D space? nD is something similar. 2 or 3 dimensions are not enough to capture word representations and hence ‘n’ (arbritary, or as decided by the practitioner) dimensions are used for the same. Don’t worry if you can’t visualize it. No one can ;)\n\n\n\n\nThank you for reading my blog. You can reach out to me through my socials here:\n\nDiscord - “lostsquid.”\nLinkedIn - /in/suchitg04/\n\nI hope to see you soon. Until then 👋"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About me!",
+    "objectID": "bits.html",
+    "href": "bits.html",
+    "title": "Bits",
     "section": "",
-    "text": "X\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Github\n  \n\n      \nSalut! Je m’appelle Suchit! I am a CS engineering sophomore at Ramaiah Institute of Technology at the Silicon Valley of India, Bangalore.\nI have a strong interest in pursuing a research career in the field of Deep Learning and love the notion of humans working alongside AI. I wish to create AI systems to enhance just about any aspect of the human life.\n\n\nM S Ramaiah Institute of Technology | Bangalore, India\nB.E. in Information Science | Dec 2022 - Present (expected: 2026)\n\n\n\nMukti (FOSS Club) | Core Member | Aug 2023 - Feb 2024\nVisit advAIta started by me as a fast.ai study group, now turned to a general AI/DL community, that’s the collective effort of many at my college!"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nNew to CS/tech? Here’s my journey so far\n\n\n\n\n\nIt’s been more than two years since the first time I got lustfully 🤤 attracted to CS…\n\n\n\n\n\nMay 18, 2023\n\n\nSuchit G\n\n\n\n\n\n\n\n\n\n\n\n\nTest-time compute, but for humans.\n\n\n\n\n\nImagine writing lol. No, actually, imagine writing.\n\n\n\n\n\nNov 11, 2024\n\n\nSuchit G\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "About me!",
+    "objectID": "bits/testtimecompute.html",
+    "href": "bits/testtimecompute.html",
+    "title": "Test-time compute, but for humans.",
     "section": "",
-    "text": "M S Ramaiah Institute of Technology | Bangalore, India\nB.E. in Information Science | Dec 2022 - Present (expected: 2026)"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "About me!",
-    "section": "",
-    "text": "Mukti (FOSS Club) | Core Member | Aug 2023 - Feb 2024\nVisit advAIta started by me as a fast.ai study group, now turned to a general AI/DL community, that’s the collective effort of many at my college!"
-  },
-  {
-    "objectID": "index.html#more-about-me",
-    "href": "index.html#more-about-me",
-    "title": "About me!",
-    "section": "More about me",
-    "text": "More about me\nI’m of the tinkering and learning species and my current interests include Machine Learning, reading anything that seems interesting to me (including but not limited to psychology and self-help books, fiction, and half-assing CS books), learning French and playing the Guitar! I am currently taking the fastai course where I am enjoying the top-down learning and iterative approach by the course.\nI blog about what I think is interesting, worth remembering and putting it out there for primarily myself in the hope that it’s also useful for others. Feel free to DM or raise a PR in case for any edits/suggestions/additions to one of my posts or if you just want to say HI or talk about anything else (or even offer me an internship ;) )!"
+    "text": "The way O1 works is cool.\nResearchers have been figuring out that you can’t get models to, you know, * just * reason. Like, dude, just train it more, and it’ll start reasoning well. This is not the case because it predicts the next token mimicking the training data.\nThe training data also contains text (blogs, papers, etc.) where humans have written detailed explanations on why they have done what they have done. So, naturally (or based on evals, you cheeky vibe-based-eval person), you can expect the model to perform better at solving problems by first spitting out the steps or what it thinks about the problem. It’s essentially the model giving more context to itself for better next token prediction.\nThis is reffered to as Chain of Thought (CoT). It is one interesting way to get them to reason (or a dumbed down way of actual human reasoning). The models are explicitly begged asked to think out before giving out an answer.\nOpenAI took this to next level by training an LLM to be good at this.\nThis maps to humans as well in the sense that we see a lot of benefits when we think out loud or write down our thoughts. I know that we can reason/think quite well “in our brains” but it’s better the other way in most cases.\nThis especially applies to writing about some material you just learnt. You identify a lot of gaps in your understanding when you do this and are using your “test-time compute” to understand, make connections and discover new things in your head."
   }
 ]
