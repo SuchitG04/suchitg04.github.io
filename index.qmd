@@ -3,7 +3,7 @@ title: "About me!"
 image: profile1.jpg
 about:
   id: main
-  template: solana
+  template: jolla
   links:
     - icon: twitter
       text: X
@@ -25,16 +25,39 @@ I have a strong interest in pursuing a research career in the field of Deep Lear
 
 ## Education
 
-**M S Ramaiah Institute of Technology** | Bangalore, India
+#### **M S Ramaiah Institute of Technology** | Bangalore, India
 
-B.E. in Information Science | Dec 2022 - Present (expected: 2026)
+Bachelors in Information Science and Engineering | Dec 2022 - Present (expected: 2026)
 
 ## Experience
 
-**Mukti (FOSS Club)** | Core Member | Aug 2023 - Feb 2024
+#### **GenAI Intern**
+##### **[NextWealth](https://www.nextwealth.com/)** | Sep 2024 - Nov 2024
+
+• Leveraged RAG to extract fields of interest from contract documents achieving 90%+ accuracy.
+
+• Utilized LLM-Agents to create multi-turn conversation dataset between E-Commerce customers and support agents with 15,000+ multi-turn conversations.
+
+• Created a detailed analysis of distributions of 8+ dataset augmentation techniques used like tone augmentations, language style augmentations and more.
 
 
-Visit [advAIta](https://advaita-io.github.io/) started by me as a [fast.ai](https://course.fast.ai) study group, now turned to a general AI/DL community, that's the collective effort of many at my college!
+#### **DevOps and Distributed Computing Intern**
+##### **DenseLayerAI** | Aug 2024 - Oct 2024
+
+• Configured and set up a 5 Nodes Spark cluster on a remote Hetzner server and open sourced the implementation and steps to reproduce. ([GitHub link](https://github.com/GR-Menon/BigBanyanTree))
+
+• Built a robust and errors-tolerant system to process over 28 TB of data from CommonCrawl (6300 WARC files), thoroughly documenting the entire process. ([blog link](https://datascience.fm/author/suchit))
+
+• Open sourced processed data (315M+ rows) having IPs, server names, script tag src attributes, etc., enriched with geolocation information. ([<b>HuggingFace dataset link</b>](https://hf.co/big-banyan-tree))
+
+• Extracted and performed analysis of JS library usage for 2024 from the Crawl data achieving same results as in Wappalyzer.com. ([blog post link](https://datascience.fm/extracting-the-top-used-js-libraries-from-common-crawl/))
+
+
+## Volunteering | Extra-curriculars
+
+##### **Mukti (FOSS Club)** | Core Member | Aug 2023 - Feb 2024
+
+##### **GDSC, MSRIT** | Core Member | Dec 2024 - Present
 
 :::
 

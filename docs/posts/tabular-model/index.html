@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.36">
+<meta name="generator" content="quarto-1.7.13">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,17 +68,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../favicon-32x32_vapor2.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-474c6d7e63be50eb6972897072b39b27.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7a0e04ec82617701cd34937292aa414e.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0a99ec1caed7d00db6e727f7817884cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-1c8cd26104386334381ff4da375164c0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-579c2f24c863efc83e2f14b3d13ba33a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8ef467b0458b1029d0a9ed138ae11751.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -213,17 +214,13 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#init__" id="toc-init__" class="nav-link" data-scroll-target="#init__"><code>__init__</code></a>
-  <ul class="collapse">
-  <li><a href="#ps" id="toc-ps" class="nav-link" data-scroll-target="#ps"><code>ps</code></a></li>
-  <li><a href="#embeds" id="toc-embeds" class="nav-link" data-scroll-target="#embeds"><code>embeds</code></a></li>
-  <li><a href="#layers" id="toc-layers" class="nav-link" data-scroll-target="#layers"><code>layers</code></a></li>
-  </ul></li>
-  <li><a href="#forward" id="toc-forward" class="nav-link" data-scroll-target="#forward"><code>forward</code></a>
-  <ul class="collapse">
-  <li><a href="#prepping-categorical-variables" id="toc-prepping-categorical-variables" class="nav-link" data-scroll-target="#prepping-categorical-variables">Prepping categorical variables</a></li>
-  <li><a href="#prepping-continous-variables" id="toc-prepping-continous-variables" class="nav-link" data-scroll-target="#prepping-continous-variables">Prepping continous variables</a></li>
-  </ul></li>
+  <li><a href="#init__" id="toc-init__" class="nav-link" data-scroll-target="#init__"><code>__init__</code></a></li>
+  <li><a href="#ps" id="toc-ps" class="nav-link" data-scroll-target="#ps">### <code>ps</code></a></li>
+  <li><a href="#embeds" id="toc-embeds" class="nav-link" data-scroll-target="#embeds">### <code>embeds</code></a></li>
+  <li><a href="#layers" id="toc-layers" class="nav-link" data-scroll-target="#layers">### <code>layers</code></a></li>
+  <li><a href="#forward" id="toc-forward" class="nav-link" data-scroll-target="#forward"><code>forward</code></a></li>
+  <li><a href="#prepping-categorical-variables" id="toc-prepping-categorical-variables" class="nav-link" data-scroll-target="#prepping-categorical-variables">### Prepping categorical variables</a></li>
+  <li><a href="#prepping-continous-variables" id="toc-prepping-continous-variables" class="nav-link" data-scroll-target="#prepping-continous-variables">### Prepping continous variables</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -283,17 +280,16 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 </section>
 <section id="init__" class="level2">
 <h2 class="anchored" data-anchor-id="init__"><code>__init__</code></h2>
-<section id="ps" class="level3">
-<h3 class="anchored" data-anchor-id="ps"><code>ps</code></h3>
-<hr>
+</section>
+<section id="ps" class="level2">
+<h2 class="anchored" data-anchor-id="ps">### <code>ps</code></h2>
 <p>This line of code assigns an array of zeroes of length layers if <code>ps=None</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ps <span class="op">=</span> ifnone(ps, [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(layers))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I’m not entirely sure as to what this line does, but I think it creates an array of same valued <code>ps</code> of length <code>layers</code> if <code>ps</code> is a list.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> is_listy(ps): ps <span class="op">=</span> [ps]<span class="op">*</span><span class="bu">len</span>(layers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="embeds" class="level3">
-<h3 class="anchored" data-anchor-id="embeds"><code>embeds</code></h3>
-<hr>
+<section id="embeds" class="level2">
+<h2 class="anchored" data-anchor-id="embeds">### <code>embeds</code></h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.embeds <span class="op">=</span> nn.ModuleList([Embedding(ni, nf) <span class="cf">for</span> ni,nf <span class="kw">in</span> emb_szs])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.emb_drop <span class="op">=</span> nn.Dropout(embed_p)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.bn_cont <span class="op">=</span> nn.BatchNorm1d(n_cont) <span class="cf">if</span> bn_cont <span class="cf">else</span> <span class="va">None</span></span>
@@ -314,9 +310,8 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
   (1): Embedding(5, 3)
 )</code></pre>
 </section>
-<section id="layers" class="level3">
-<h3 class="anchored" data-anchor-id="layers"><code>layers</code></h3>
-<hr>
+<section id="layers" class="level2">
+<h2 class="anchored" data-anchor-id="layers">### <code>layers</code></h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [n_emb <span class="op">+</span> n_cont] <span class="op">+</span> layers <span class="op">+</span> [out_sz]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>actns <span class="op">=</span> [act_cls <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sizes)<span class="op">-</span><span class="dv">2</span>)] <span class="op">+</span> [<span class="va">None</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>_layers <span class="op">=</span> [LinBnDrop(sizes[i], sizes[i<span class="op">+</span><span class="dv">1</span>], bn<span class="op">=</span>use_bn <span class="kw">and</span> (i<span class="op">!=</span><span class="bu">len</span>(actns)<span class="op">-</span><span class="dv">1</span> <span class="kw">or</span> bn_final), p<span class="op">=</span>p, act<span class="op">=</span>a, lin_first<span class="op">=</span>lin_first)</span>
@@ -332,25 +327,22 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <p>I refer you to <a href="http://vishalbakshi.com/blog/posts/2023-10-10-TabularModel/#layers">Vishal’s post</a> I put in the disclaimer earlier if you aren’t satisfied with this explanation.</p>
 <p>The next line appends a <code>SigmoidRange</code> function that limits the output values within the specified range. And finally, the last line wraps all the layers in <code>nn.Sequential</code>.</p>
 </section>
-</section>
 <section id="forward" class="level2">
 <h2 class="anchored" data-anchor-id="forward"><code>forward</code></h2>
-<section id="prepping-categorical-variables" class="level3">
-<h3 class="anchored" data-anchor-id="prepping-categorical-variables">Prepping categorical variables</h3>
-<hr>
+</section>
+<section id="prepping-categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="prepping-categorical-variables">### Prepping categorical variables</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [e(x_cat[:,i]) <span class="cf">for</span> i,e <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="va">self</span>.embeds)]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.cat(x, <span class="dv">1</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">self</span>.emb_drop(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Firstly, embeddings for <code>x_cat</code> are created and stored in <code>x</code>. Then they are concanetated along the columns into a single tensor. <code>Dropout</code> layers are added in the next line based on <code>embed_p</code>.</p>
 </section>
-<section id="prepping-continous-variables" class="level3">
-<h3 class="anchored" data-anchor-id="prepping-continous-variables">Prepping continous variables</h3>
-<hr>
+<section id="prepping-continous-variables" class="level2">
+<h2 class="anchored" data-anchor-id="prepping-continous-variables">### Prepping continous variables</h2>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">self</span>.bn_cont <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>: x_cont <span class="op">=</span> <span class="va">self</span>.bn_cont(x_cont)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.cat([x, x_cont], <span class="dv">1</span>) <span class="cf">if</span> <span class="va">self</span>.n_emb <span class="op">!=</span> <span class="dv">0</span> <span class="cf">else</span> x_cont</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the first line, <code>x_cont = self.bn_cont(x_cont)</code> is run if <code>bn_cont</code> (a parameter to <code>TabularModel</code>) is not <code>None</code>. Next, <code>x_cont</code> is concatenated to <code>x</code> which has the categorical embeddings if <code>self.n_emb</code> is not 0. Otherwise, <code>x_cont</code> is assigned to <code>x</code>.</p>
 <p>Finally, <code>x</code> is passed to <code>self.layers</code> which is essentially the model with <code>BatchNorm1d</code>, <code>Dropout</code> and <code>Linear</code> layers and the output is returned.</p>
-</section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
