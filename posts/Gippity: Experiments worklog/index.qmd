@@ -1,0 +1,70 @@
+---
+title: "Gippity: Experiments worklog"
+toc: true
+date: "2025-03-28"
+author: Suchit G
+description: A log of experiments performed while working on Gippity.
+categories:
+    - Research
+    - Experiments
+---
+
+**Dataset**: [fineweb_sample_10B_np_bin](https://huggingface.co/datasets/asquirous/fineweb_sample_10B_np_bin)
+
+## Expt. 1: Baseline
+
+The goal of this experiment was to establish a baseline to compare performance of subsequent experiments. This experiment was run on a L4 GPU on lightning.ai.
+
+### Highlights
+- ~35.6M parameter model.
+- trained on ~1B tokens from the fineweb dataset.
+- nothing fancy. Made little to no modifications to the original nanoGPT code.
+
+**NB 1**: [Code repo](https://github.com/SuchitG04/gippity/tree/master)
+
+**NB 2**: [Wandb run](https://wandb.ai/suchitg04/gippity/runs/k4aj5xe6/overview)
+
+### Model Configuration
+- **Model Architecture**:
+  - `n_embd`: 512 
+  - `n_head`: 8 
+  - `n_layer`: 6 
+  - `block_size`: 1024 
+  - `bias`: false 
+  - `dropout`: 0 (no dropout)
+
+### Training Parameters
+- **Optimizer**:
+  - `learning_rate`: 0.0006
+  - `min_lr`: 0.00006
+  - `beta1`: 0.9
+  - `beta2`: 0.95
+  - `weight_decay`: 0.1
+  - `grad_clip`: 1
+  - `gradient_accumulation_steps`: 16
+- **Learning Rate Schedule**:
+  - `decay_lr`: true
+  - `warmup_iters`: 100
+  - `lr_decay_iters`: 2000
+- **Training Duration**:
+  - `max_iters`: 2000
+  - `batch_size`: 32
+  - `eval_interval`: 40
+  - `eval_iters`: 50
+
+### Initialization & Checkpointing
+- `init_from`: "scratch" 
+- `always_save_checkpoint`: true
+- `out_dir`: "out" 
+
+### Misc
+- `device`: "cuda" 
+- `dtype`: "bfloat16" 
+- `backend`: "nccl" 
+- `compile`: true 
+
+### Logging
+- `wandb_log`: true
+- `wandb_project`: "gippity"
+- `wandb_run_name`: "gippity-chinchilla-baseline"
+
