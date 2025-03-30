@@ -24,7 +24,7 @@ The goal of this experiment was to establish a baseline to compare performance o
 
 **NB 2**: [Wandb run](https://wandb.ai/suchitg04/gippity/runs/k4aj5xe6/overview)
 
-### Model Configuration
+### Config
 - **Model Architecture**:
   - `n_embd`: 512 
   - `n_head`: 8 
@@ -33,7 +33,6 @@ The goal of this experiment was to establish a baseline to compare performance o
   - `bias`: false 
   - `dropout`: 0 (no dropout)
 
-### Training Parameters
 - **Optimizer**:
   - `learning_rate`: 0.0006
   - `min_lr`: 0.00006
@@ -52,19 +51,17 @@ The goal of this experiment was to establish a baseline to compare performance o
   - `eval_interval`: 40
   - `eval_iters`: 50
 
-### Initialization & Checkpointing
-- `init_from`: "scratch" 
-- `always_save_checkpoint`: true
-- `out_dir`: "out" 
+- **Misc**:
+  - `init_from`: "scratch" 
+  - `always_save_checkpoint`: true
+  - `out_dir`: "out" 
+  - `device`: "cuda" 
+  - `dtype`: "bfloat16" 
+  - `backend`: "nccl" 
+  - `compile`: true 
 
-### Misc
-- `device`: "cuda" 
-- `dtype`: "bfloat16" 
-- `backend`: "nccl" 
-- `compile`: true 
-
-### Logging
-- `wandb_log`: true
-- `wandb_project`: "gippity"
-- `wandb_run_name`: "gippity-chinchilla-baseline"
+- **Logging**:
+  - `wandb_log`: true
+  - `wandb_project`: "gippity"
+  - `wandb_run_name`: "gippity-chinchilla-baseline"
 

@@ -181,11 +181,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
   <li><a href="#expt.-1-baseline" id="toc-expt.-1-baseline" class="nav-link active" data-scroll-target="#expt.-1-baseline">Expt. 1: Baseline</a>
   <ul class="collapse">
   <li><a href="#highlights" id="toc-highlights" class="nav-link" data-scroll-target="#highlights">Highlights</a></li>
-  <li><a href="#model-configuration" id="toc-model-configuration" class="nav-link" data-scroll-target="#model-configuration">Model Configuration</a></li>
-  <li><a href="#training-parameters" id="toc-training-parameters" class="nav-link" data-scroll-target="#training-parameters">Training Parameters</a></li>
-  <li><a href="#initialization-checkpointing" id="toc-initialization-checkpointing" class="nav-link" data-scroll-target="#initialization-checkpointing">Initialization &amp; Checkpointing</a></li>
-  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a></li>
-  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging">Logging</a></li>
+  <li><a href="#config" id="toc-config" class="nav-link" data-scroll-target="#config">Config</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -341,8 +337,8 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <p><strong>NB 1</strong>: <a href="https://github.com/SuchitG04/gippity/tree/master">Code repo</a></p>
 <p><strong>NB 2</strong>: <a href="https://wandb.ai/suchitg04/gippity/runs/k4aj5xe6/overview">Wandb run</a></p>
 </section>
-<section id="model-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="model-configuration">Model Configuration</h3>
+<section id="config" class="level3">
+<h3 class="anchored" data-anchor-id="config">Config</h3>
 <ul>
 <li><strong>Model Architecture</strong>:
 <ul>
@@ -353,11 +349,6 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <li><code>bias</code>: false</li>
 <li><code>dropout</code>: 0 (no dropout)</li>
 </ul></li>
-</ul>
-</section>
-<section id="training-parameters" class="level3">
-<h3 class="anchored" data-anchor-id="training-parameters">Training Parameters</h3>
-<ul>
 <li><strong>Optimizer</strong>:
 <ul>
 <li><code>learning_rate</code>: 0.0006</li>
@@ -381,31 +372,22 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <li><code>eval_interval</code>: 40</li>
 <li><code>eval_iters</code>: 50</li>
 </ul></li>
-</ul>
-</section>
-<section id="initialization-checkpointing" class="level3">
-<h3 class="anchored" data-anchor-id="initialization-checkpointing">Initialization &amp; Checkpointing</h3>
+<li><strong>Misc</strong>:
 <ul>
 <li><code>init_from</code>: “scratch”</li>
 <li><code>always_save_checkpoint</code>: true</li>
 <li><code>out_dir</code>: “out”</li>
-</ul>
-</section>
-<section id="misc" class="level3">
-<h3 class="anchored" data-anchor-id="misc">Misc</h3>
-<ul>
 <li><code>device</code>: “cuda”</li>
 <li><code>dtype</code>: “bfloat16”</li>
 <li><code>backend</code>: “nccl”</li>
 <li><code>compile</code>: true</li>
-</ul>
-</section>
-<section id="logging" class="level3">
-<h3 class="anchored" data-anchor-id="logging">Logging</h3>
+</ul></li>
+<li><strong>Logging</strong>:
 <ul>
 <li><code>wandb_log</code>: true</li>
 <li><code>wandb_project</code>: “gippity”</li>
 <li><code>wandb_run_name</code>: “gippity-chinchilla-baseline”</li>
+</ul></li>
 </ul>
 
 
