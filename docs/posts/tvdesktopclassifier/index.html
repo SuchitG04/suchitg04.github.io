@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.19">
+<meta name="generator" content="quarto-1.7.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,12 +75,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2f888a9df4d438511fe441eb1046b373.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a90412ab12e10e4c76bfe8821856a4ea.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7271f29f9498218151f3120baddb7363.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d36b0c07d1a64e3620afad141a3ae95f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-3faf3427fc1a86c23b1243d462f3dd1a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d36b0c07d1a64e3620afad141a3ae95f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3faf3427fc1a86c23b1243d462f3dd1a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,7 +127,166 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    window.setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      window.setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    window.hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(darkModeDefault) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const darkModeDefault = false;
+    document.querySelector('link.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !window.hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (window.hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -229,136 +389,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
-<script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    toggleBodyColorPrimary();
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        disableStylesheet(primaryStylesheets)
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const darkModeDefault = false;
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+
 
 
 
@@ -381,7 +412,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="installing-modules">2. Installing modules</h2>
 <p>Here, we will be installing/updating the python modules necessary for this tutorial.</p>
 <p>Run the two following code blocks to do so.</p>
-<p>::: {#cell-3 .cell _kg_hide-output=‘false’ execution=‘{“iopub.execute_input”:“2023-05-29T15:14:07.221608Z”,“iopub.status.busy”:“2023-05-29T15:14:07.220895Z”,“iopub.status.idle”:“2023-05-29T15:14:26.318729Z”,“shell.execute_reply”:“2023-05-29T15:14:26.317485Z”,“shell.execute_reply.started”:“2023-05-29T15:14:07.221548Z”}’ trusted=‘true’ execution_count=3}</p>
+<p>::: {#cell-3 .cell _kg_hide-output=‘false’ quarto-private-1=‘{“key”:“execution”,“value”:{“iopub.execute_input”:“2023-05-29T15:14:07.221608Z”,“iopub.status.busy”:“2023-05-29T15:14:07.220895Z”,“iopub.status.idle”:“2023-05-29T15:14:26.318729Z”,“shell.execute_reply”:“2023-05-29T15:14:26.317485Z”,“shell.execute_reply.started”:“2023-05-29T15:14:07.221548Z”}}’ trusted=‘true’ execution_count=3}</p>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastcore.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request</span>
@@ -413,12 +444,12 @@ apache-beam 2.44.0 requires dill&lt;0.3.2,&gt;=0.3.1.1, but you have dill 0.3.6 
 <h2 class="anchored" data-anchor-id="glimpsing-our-data">3. Glimpsing our data</h2>
 <p>What is AI without data? Data is arguably the most important thing in the field of AI/Data Science. AI models are trained using tons and tons of data. Let’s have a look at how our data looks like.</p>
 <p>In the first block, we search and retrieve one URL for an image of a flat screen TV.<br> We then download the image from the retrieved URL and open the image and repeat the process for a CRT TV in the subsequent code blocks.</p>
-<div id="cell-5" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:14:36.369244Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:14:36.368121Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:14:36.381356Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:14:36.380267Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:14:36.369187Z&quot;}" data-trusted="true" data-execution_count="4">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:14:36.369244Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:14:36.368121Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:14:36.381356Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:14:36.380267Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:14:36.369187Z&quot;}}" data-trusted="true" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> search_images(term, max_images<span class="op">=</span><span class="dv">40</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Searching for '</span><span class="sc">{</span>term<span class="sc">}</span><span class="ss">'"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> L(ddg_images(term, max_results<span class="op">=</span>max_images)).itemgot(<span class="st">'image'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>::: {#cell-6 .cell _kg_hide-input=‘false’ execution=‘{“iopub.execute_input”:“2023-05-29T15:14:42.535536Z”,“iopub.status.busy”:“2023-05-29T15:14:42.535063Z”,“iopub.status.idle”:“2023-05-29T15:14:43.824537Z”,“shell.execute_reply”:“2023-05-29T15:14:43.823463Z”,“shell.execute_reply.started”:“2023-05-29T15:14:42.535494Z”}’ trusted=‘true’ execution_count=5}</p>
+<p>::: {#cell-6 .cell _kg_hide-input=‘false’ quarto-private-1=‘{“key”:“execution”,“value”:{“iopub.execute_input”:“2023-05-29T15:14:42.535536Z”,“iopub.status.busy”:“2023-05-29T15:14:42.535063Z”,“iopub.status.idle”:“2023-05-29T15:14:43.824537Z”,“shell.execute_reply”:“2023-05-29T15:14:43.823463Z”,“shell.execute_reply.started”:“2023-05-29T15:14:42.535494Z”}}’ trusted=‘true’ execution_count=5}</p>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> search_images(<span class="st">'flat screen tv'</span>, max_images<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>urls[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -436,7 +467,7 @@ apache-beam 2.44.0 requires dill&lt;0.3.2,&gt;=0.3.1.1, but you have dill 0.3.6 
 <pre><code>'http://s4msungtelevision32.files.wordpress.com/2013/01/flat-screen-televisions.jpg'</code></pre>
 </div>
 <p>:::</p>
-<div id="cell-7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:16.938353Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:16.937819Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:17.181494Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:17.180370Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:16.938307Z&quot;}" data-trusted="true" data-execution_count="8">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:16.938353Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:16.937819Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:17.181494Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:17.180370Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:16.938307Z&quot;}}" data-trusted="true" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dest <span class="op">=</span> <span class="st">'flatscreentv.jpg'</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying two libraries because they both are working erratically for me</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># try:</span></span>
@@ -448,7 +479,7 @@ apache-beam 2.44.0 requires dill&lt;0.3.2,&gt;=0.3.1.1, but you have dill 0.3.6 
 <pre><code>('flatscreentv.jpg', &lt;http.client.HTTPMessage at 0x7e8f7900d090&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:19.949554Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:19.948651Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:20.075299Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:20.074178Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:19.949501Z&quot;}" data-trusted="true" data-execution_count="9">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:19.949554Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:19.948651Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:20.075299Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:20.074178Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:19.949501Z&quot;}}" data-trusted="true" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Image.<span class="bu">open</span>(dest).to_thumb(<span class="dv">256</span>, <span class="dv">256</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
@@ -458,7 +489,7 @@ apache-beam 2.44.0 requires dill&lt;0.3.2,&gt;=0.3.1.1, but you have dill 0.3.6 
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:22.681679Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:22.681188Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:25.178907Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:25.177757Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:22.681632Z&quot;}" data-trusted="true" data-execution_count="10">
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:22.681679Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:22.681188Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:15:25.178907Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:15:25.177757Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:22.681632Z&quot;}}" data-trusted="true" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    download_url(search_images(<span class="st">'crt tv'</span>, max_images<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>], <span class="st">'crttv.jpg'</span>, show_progress<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
@@ -480,7 +511,7 @@ apache-beam 2.44.0 requires dill&lt;0.3.2,&gt;=0.3.1.1, but you have dill 0.3.6 
 <section id="downloading-images" class="level2">
 <h2 class="anchored" data-anchor-id="downloading-images">4. Downloading images</h2>
 <p>Let us now download a bunch of images to train our model and make them ready to be “fed” into the model.</p>
-<div id="cell-11" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:29.982292Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:29.981756Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:26.155410Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:26.153924Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:29.982244Z&quot;}" data-trusted="true" data-execution_count="11">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:15:29.982292Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:15:29.981756Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:26.155410Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:26.153924Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:15:29.982244Z&quot;}}" data-trusted="true" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Downloading images into their respective directories</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>searches <span class="op">=</span> <span class="st">'flat screen tv'</span>, <span class="st">'crt tv'</span>, <span class="st">'desktop monitor'</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">'tv_or_desktop'</span>)</span>
@@ -498,7 +529,7 @@ Searching for 'crt tv'
 Searching for 'desktop monitor'</code></pre>
 </div>
 </div>
-<div id="cell-12" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:16:31.891610Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:16:31.890174Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:32.365405Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:32.364134Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:16:31.891534Z&quot;}" data-trusted="true" data-execution_count="12">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:16:31.891610Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:16:31.890174Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:32.365405Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:32.364134Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:16:31.891534Z&quot;}}" data-trusted="true" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check and remove unopenable images</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>failed <span class="op">=</span> verify_images(get_image_files(path))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>failed.<span class="bu">map</span>(Path.unlink)</span>
@@ -507,7 +538,7 @@ Searching for 'desktop monitor'</code></pre>
 <pre><code>7</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:16:36.090596Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:16:36.090082Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:40.897179Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:40.895982Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:16:36.090531Z&quot;}" data-trusted="true" data-execution_count="13">
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:16:36.090596Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:16:36.090082Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:16:40.897179Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:16:40.895982Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:16:36.090531Z&quot;}}" data-trusted="true" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading the data</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataBlock(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock),</span>
@@ -530,7 +561,7 @@ Searching for 'desktop monitor'</code></pre>
 <section id="training-our-model" class="level2">
 <h2 class="anchored" data-anchor-id="training-our-model">5. Training our model!</h2>
 <p>This is it people. ’tis time to train our model! For this example we use a model called ResNet18 with 18 layers. ResNet18 is pre-trained on ImageNet dataset. Therefore, we need not train it again, rather we fine tune it to recognize images from our dataset, i.e., flatscreen TV, CRT TV and desktop monitors.</p>
-<div id="cell-15" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:12.087221Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:12.086624Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:26.025783Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:26.024456Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:12.087171Z&quot;}" data-trusted="true" data-execution_count="14">
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:12.087221Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:12.086624Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:26.025783Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:26.024456Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:12.087171Z&quot;}}" data-trusted="true" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -658,7 +689,7 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <section id="classifying-images" class="level2">
 <h2 class="anchored" data-anchor-id="classifying-images">6. Classifying images</h2>
 <p>Congratulations! You have trained your first (ig 🤷) image classification model! Let us now put it to test and try classifying some images.</p>
-<div id="cell-18" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:33.578892Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:33.578350Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:33.795479Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:33.794277Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:33.578836Z&quot;}" data-trusted="true" data-execution_count="15">
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:33.578892Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:33.578350Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:33.795479Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:33.794277Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:33.578836Z&quot;}}" data-trusted="true" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting an image we had downloaded earlier</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>learn.predict(PILImage.create(<span class="st">'crttv.jpg'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -686,7 +717,7 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <pre><code>('crt tv', tensor(0), tensor([9.9726e-01, 5.5894e-04, 2.1807e-03]))</code></pre>
 </div>
 </div>
-<div id="cell-19" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:36.827360Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:36.826705Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:36.981708Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:36.980487Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:36.827313Z&quot;}" data-trusted="true" data-execution_count="16">
+<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:36.827360Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:36.826705Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:36.981708Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:36.980487Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:36.827313Z&quot;}}" data-trusted="true" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting an image we had downloaded earlier</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>learn.predict(PILImage.create(<span class="st">'flatscreentv.jpg'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -714,7 +745,7 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <pre><code>('desktop monitor', tensor(1), tensor([6.4813e-04, 9.9257e-01, 6.7823e-03]))</code></pre>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:39.932467Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:39.931988Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:41.553242Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:41.551940Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:39.932424Z&quot;}" data-trusted="true" data-execution_count="17">
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:39.932467Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:39.931988Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:41.553242Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:41.551940Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:39.932424Z&quot;}}" data-trusted="true" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download_url(search_images('desktop monitor', max_images=1)[0], dest='desktopmonitor.jpg', show_progress=False)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    download_url(search_images(<span class="st">'desktop monitor'</span>, max_images<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>], <span class="st">'desktopmonitor.jpg'</span>, show_progress<span class="op">=</span><span class="va">False</span>)</span>
@@ -733,7 +764,7 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 </div>
 </div>
 </div>
-<div id="cell-21" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:45.800498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:45.799971Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:46.258641Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:46.257439Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:45.800447Z&quot;}" data-trusted="true" data-execution_count="18">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2023-05-29T15:17:45.800498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-29T15:17:45.799971Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-29T15:17:46.258641Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-29T15:17:46.257439Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-29T15:17:45.800447Z&quot;}}" data-trusted="true" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>learn.predict(PILImage.create(<span class="st">'desktopmonitor.jpg'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -787,33 +818,7 @@ If you have any questions don’t hesitate to message me on discord. And lastly,
       a.appendChild(i);
       window.document.body.appendChild(a);
     }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(darkModeDefault) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    }
+    window.setColorSchemeToggle(window.hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

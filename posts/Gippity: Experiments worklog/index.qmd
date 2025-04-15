@@ -15,6 +15,9 @@ categories:
 
 The goal of this experiment was to establish a baseline to compare performance of subsequent experiments. This experiment was run on a L4 GPU on lightning.ai.
 
+![Baseline Train Loss Curve (3.7580)](./gippity_baseline.png)
+![Baseline Val Loss Curve (3.7822)](./gippity_baseline_val.png)
+
 ### Highlights
 - ~35.6M parameter model.
 - trained on ~1B tokens from the fineweb dataset.
@@ -52,9 +55,6 @@ The goal of this experiment was to establish a baseline to compare performance o
   - `eval_iters`: 50
 
 - **Misc**:
-  - `init_from`: "scratch" 
-  - `always_save_checkpoint`: true
-  - `out_dir`: "out" 
   - `device`: "cuda" 
   - `dtype`: "bfloat16" 
   - `backend`: "nccl" 
@@ -65,3 +65,59 @@ The goal of this experiment was to establish a baseline to compare performance o
   - `wandb_project`: "gippity"
   - `wandb_run_name`: "gippity-chinchilla-baseline"
 
+
+## Expt. 2: 
+
+We use Rotary Positional embeddings in place of learned positional embeddings and RMSNorm in place of LayerNorm. 
+
+![RoPE+RMSNorn Train Loss Curve (3.6428)](./gippity_ropermsnorm_train.png)
+![RoPE+RMSNorn Val Loss Curve (3.6436)](./gippity_ropermsnorm_val.png)
+
+### Highlights
+- shows better loss than baseline (converges faster).
+- reduced VRAM usage due to removal of learned positional embeddings.
+- hence the batch size can be increased and gradient accumulation steps decreased.
+
+**NB 1**: [Code repo](https://github.com/SuchitG04/gippity/tree/rope)
+
+**NB 2**: [Wandb run](https://wandb.ai/suchitg04/gippity/runs/ysitmtuv/overview)
+
+### Config
+- **Model Architecture**:
+  - `n_embd`: 512
+  - `n_head`: 8
+  - `n_layer`: 6
+  - `block_size`: 1024
+  - `bias`: false
+  - `dropout`: 0 (no dropout)
+
+- **Optimizer**:
+  - `learning_rate`: 0.0006
+  - `min_lr`: 0.00006
+  - `beta1`: 0.9
+  - `beta2`: 0.95
+  - `weight_decay`: 0.1
+  - `grad_clip`: 1
+  - `gradient_accumulation_steps`: 8
+
+- **Learning Rate Schedule**:
+  - `decay_lr`: true
+  - `warmup_iters`: 100
+  - `lr_decay_iters`: 2000
+
+- **Training Duration**:
+  - `max_iters`: 2000
+  - `batch_size`: 64
+  - `eval_interval`: 40
+  - `eval_iters`: 50
+
+- **Misc**:
+  - `device`: "cuda"
+  - `dtype`: "bfloat16"
+  - `backend`: "nccl"
+  - `compile`: true
+
+- **Logging**:
+  - `wandb_log`: true
+  - `wandb_project`: "gippity"
+  - `wandb_run_name`: "gippity-rope-rmsnorm"
