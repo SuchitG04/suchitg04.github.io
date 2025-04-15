@@ -15,8 +15,8 @@ categories:
 
 The goal of this experiment was to establish a baseline to compare performance of subsequent experiments. This experiment was run on a L4 GPU on lightning.ai.
 
-![Baseline Train Loss Curve (3.7580)](./gippity_baseline.png)
-![Baseline Val Loss Curve (3.7822)](./gippity_baseline_val.png)
+![Baseline Train Loss Curve (3.7580)](./assets/gippity_baseline.png)
+![Baseline Val Loss Curve (3.7822)](./assets/gippity_baseline_val.png)
 
 ### Highlights
 - ~35.6M parameter model.
@@ -70,13 +70,19 @@ The goal of this experiment was to establish a baseline to compare performance o
 
 We use Rotary Positional embeddings in place of learned positional embeddings and RMSNorm in place of LayerNorm. 
 
-![RoPE+RMSNorn Train Loss Curve (3.6428)](./gippity_ropermsnorm_train.png)
-![RoPE+RMSNorn Val Loss Curve (3.6436)](./gippity_ropermsnorm_val.png)
+![RoPE+RMSNorn Train Loss Curve (3.6428)](./assets/gippity_ropermsnorm_train.png)
+![RoPE+RMSNorn Val Loss Curve (3.6436)](./assets/gippity_ropermsnorm_val.png)
 
 ### Highlights
 - shows better loss than baseline (converges faster).
 - reduced VRAM usage due to removal of learned positional embeddings.
 - hence the batch size can be increased and gradient accumulation steps decreased.
+- faster training due to lesser parameters and lower gradient accumulation steps.
+
+### References
+- [You could have designed state of the art positional encoding](https://huggingface.co/blog/designing-positional-encoding)
+- [Rotary Embeddings: A Relative Revolution](https://blog.eleuther.ai/rotary-embeddings/)
+- [RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/pdf/2104.09864)
 
 **NB 1**: [Code repo](https://github.com/SuchitG04/gippity/tree/rope)
 

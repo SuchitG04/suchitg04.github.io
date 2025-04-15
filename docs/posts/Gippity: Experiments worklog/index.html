@@ -346,6 +346,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
   <li><a href="#expt.-2" id="toc-expt.-2" class="nav-link" data-scroll-target="#expt.-2">Expt. 2:</a>
   <ul class="collapse">
   <li><a href="#highlights-1" id="toc-highlights-1" class="nav-link" data-scroll-target="#highlights-1">Highlights</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#config-1" id="toc-config-1" class="nav-link" data-scroll-target="#config-1">Config</a></li>
   </ul></li>
   </ul>
@@ -363,7 +364,7 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <section id="expt.-1-baseline" class="level2">
 <h2 class="anchored" data-anchor-id="expt.-1-baseline">Expt. 1: Baseline</h2>
 <p>The goal of this experiment was to establish a baseline to compare performance of subsequent experiments. This experiment was run on a L4 GPU on lightning.ai.</p>
-<p><img src="./gippity_baseline.png" class="img-fluid" alt="Baseline Train Loss Curve (3.7580)"> <img src="./gippity_baseline_val.png" class="img-fluid" alt="Baseline Val Loss Curve (3.7822)"></p>
+<p><img src="./assets/gippity_baseline.png" class="img-fluid" alt="Baseline Train Loss Curve (3.7580)"> <img src="./assets/gippity_baseline_val.png" class="img-fluid" alt="Baseline Val Loss Curve (3.7822)"></p>
 <section id="highlights" class="level3">
 <h3 class="anchored" data-anchor-id="highlights">Highlights</h3>
 <ul>
@@ -428,13 +429,22 @@ gtag('config', 'G-3FN26ZGN6Q', { 'anonymize_ip': true});
 <section id="expt.-2" class="level2">
 <h2 class="anchored" data-anchor-id="expt.-2">Expt. 2:</h2>
 <p>We use Rotary Positional embeddings in place of learned positional embeddings and RMSNorm in place of LayerNorm.</p>
-<p><img src="./gippity_ropermsnorm_train.png" class="img-fluid" alt="RoPE+RMSNorn Train Loss Curve (3.6428)"> <img src="./gippity_ropermsnorm_val.png" class="img-fluid" alt="RoPE+RMSNorn Val Loss Curve (3.6436)"></p>
+<p><img src="./assets/gippity_ropermsnorm_train.png" class="img-fluid" alt="RoPE+RMSNorn Train Loss Curve (3.6428)"> <img src="./assets/gippity_ropermsnorm_val.png" class="img-fluid" alt="RoPE+RMSNorn Val Loss Curve (3.6436)"></p>
 <section id="highlights-1" class="level3">
 <h3 class="anchored" data-anchor-id="highlights-1">Highlights</h3>
 <ul>
 <li>shows better loss than baseline (converges faster).</li>
 <li>reduced VRAM usage due to removal of learned positional embeddings.</li>
 <li>hence the batch size can be increased and gradient accumulation steps decreased.</li>
+<li>faster training due to lesser parameters and lower gradient accumulation steps.</li>
+</ul>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://huggingface.co/blog/designing-positional-encoding">You could have designed state of the art positional encoding</a></li>
+<li><a href="https://blog.eleuther.ai/rotary-embeddings/">Rotary Embeddings: A Relative Revolution</a></li>
+<li><a href="https://arxiv.org/pdf/2104.09864">RoFormer: Enhanced Transformer with Rotary Position Embedding</a></li>
 </ul>
 <p><strong>NB 1</strong>: <a href="https://github.com/SuchitG04/gippity/tree/rope">Code repo</a></p>
 <p><strong>NB 2</strong>: <a href="https://wandb.ai/suchitg04/gippity/runs/ysitmtuv/overview">Wandb run</a></p>
