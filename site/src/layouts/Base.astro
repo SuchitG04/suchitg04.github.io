@@ -1,0 +1,124 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  socialImage?: string | null;
+  type?: "website" | "article";
+}
+
+const {
+  title = "Suchit G — Engineer, builder, tinkerer",
+  description = "Suchit G is an engineer in Bangalore working across language models, data systems, and distributed systems.",
+  socialImage = null,
+  type = "website",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const absoluteSocialImage = socialImage ? new URL(socialImage, Astro.site) : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const theme = saved === "light" || saved === "dark" ? saved : "system";
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = "system";
+        }
+      })();
+    </script>
+    <style is:inline>
+      :root { color-scheme: light; background-color: #f1efe8; }
+      :root[data-theme="dark"] { color-scheme: dark; background-color: #11120f; }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) { color-scheme: dark; background-color: #11120f; }
+      }
+    </style>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {absoluteSocialImage && <meta property="og:image" content={absoluteSocialImage} />}
+    <meta name="twitter:card" content={absoluteSocialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {absoluteSocialImage && <meta name="twitter:image" content={absoluteSocialImage} />}
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header shell">
+      <a class="wordmark" href="/" aria-label="Suchit G, home">SG<span class="dot">.</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="/#work">Work</a>
+        <a href="/blog/">Blog</a>
+        <a href="/bits/">Bits</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Theme: system" title="Theme: system">
+          <span aria-hidden="true">◐</span><span class="theme-name">System</span>
+        </button>
+        <a class="header-link" href="https://github.com/SuchitG04">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer shell">
+      <p>Built with Astro</p>
+      <div>
+        <a href="https://github.com/SuchitG04">GitHub</a>
+        <a href="https://linkedin.com/in/suchitg04">LinkedIn</a>
+        <a href="https://twitter.com/asquirous">X</a>
+      </div>
+    </footer>
+    <script is:inline>
+      (() => {
+        const button = document.querySelector(".theme-toggle");
+        if (!(button instanceof HTMLButtonElement)) return;
+
+        const choices = ["system", "light", "dark"];
+        const details = {
+          system: { icon: "◐", name: "System" },
+          light: { icon: "☼", name: "Light" },
+          dark: { icon: "●", name: "Dark" },
+        };
+
+        const apply = (theme) => {
+          document.documentElement.dataset.theme = theme;
+          try {
+            if (theme === "system") localStorage.removeItem("theme");
+            else localStorage.setItem("theme", theme);
+          } catch {}
+
+          const detail = details[theme];
+          const icon = button.querySelector("span");
+          const name = button.querySelector(".theme-name");
+          if (icon) icon.textContent = detail.icon;
+          if (name) name.textContent = detail.name;
+          button.setAttribute("aria-label", `Theme: ${detail.name.toLowerCase()}. Activate for next theme.`);
+          button.title = `Theme: ${detail.name.toLowerCase()}`;
+        };
+
+        apply(document.documentElement.dataset.theme || "system");
+        button.addEventListener("click", () => {
+          const current = document.documentElement.dataset.theme || "system";
+          apply(choices[(choices.indexOf(current) + 1) % choices.length]);
+        });
+      })();
+    </script>
+  </body>
+</html>

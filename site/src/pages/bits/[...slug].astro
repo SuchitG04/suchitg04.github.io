@@ -1,0 +1,26 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const bits = await getCollection("bits", ({ data }) => !data.draft);
+  return bits.map((bit) => ({ params: { slug: bit.id.replace(/\/index$/, "") }, props: { bit } }));
+}
+
+interface Props { bit: CollectionEntry<"bits"> }
+const { bit } = Astro.props;
+const { Content } = await render(bit);
+const date = new Intl.DateTimeFormat("en", { day: "2-digit", month: "long", year: "numeric" }).format(bit.data.date);
+---
+
+<Base title={`${bit.data.title} — Bits — Suchit G`} description={bit.data.description} socialImage={null} type="article">
+  <article class="article bit-article shell">
+    <header class="article-head">
+      <a href="/bits/">← All bits</a>
+      <div class="article-labels"><span>Bit</span><span>{date}</span></div>
+      <h1>{bit.data.title}</h1>
+      <p>{bit.data.description}</p>
+    </header>
+    <div class="article-grid"><aside><p>A short note</p></aside><div class="prose"><Content /></div></div>
+  </article>
+</Base>

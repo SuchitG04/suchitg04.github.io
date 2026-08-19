@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const bits = (await getCollection("bits", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const formatDate = (date: Date) => new Intl.DateTimeFormat("en", { day: "2-digit", month: "short", year: "numeric" }).format(date);
+---
+
+<Base title="Bits — Suchit G" description="Short thoughts and unfinished connections by Suchit G.">
+  <header class="page-intro bits-intro shell">
+    <p class="kicker"><span></span> Bits</p>
+    <h1>Small thoughts,<br /><em>kept alive.</em></h1>
+    <p>Observations too small for an essay and too useful to leave buried in a notes app.</p>
+  </header>
+
+  <section class="bit-grid shell">
+    {bits.map((bit, index) => (
+      <a href={`/bits/${bit.id.replace(/\/index$/, "")}/`} class="bit-card">
+        <div><span>BIT {(index + 1).toString().padStart(3, "0")}</span><span>{formatDate(bit.data.date)}</span></div>
+        <h2>{bit.data.title}</h2>
+        <p>{bit.data.description}</p>
+        <span class="bit-arrow">Read note ↗</span>
+      </a>
+    ))}
+  </section>
+</Base>

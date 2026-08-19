@@ -1,0 +1,98 @@
+---
+import Base from "../layouts/Base.astro";
+
+const work = [
+  {
+    index: "01",
+    eyebrow: "Distributed systems · Data",
+    title: "Making 28 TB of the web tractable",
+    description:
+      "Designed a fault-tolerant pipeline across a five-node Spark cluster to process 6,300 Common Crawl archives, then published 315M+ enriched rows.",
+    href: "https://github.com/GR-Menon/BigBanyanTree",
+    stat: "28 TB",
+  },
+  {
+    index: "02",
+    eyebrow: "Language models · Research",
+    title: "Gippity experiments",
+    description:
+      "A public laboratory notebook for training a compact GPT—from a 35.6M parameter baseline through architectural experiments.",
+    href: "/blog/gippity-experiments-worklog/",
+    stat: "1B tokens",
+  },
+  {
+    index: "03",
+    eyebrow: "Generative AI · Applied research",
+    title: "Agents that make useful data",
+    description:
+      "Built agentic workflows that produced 15,000+ realistic multi-turn support conversations and analyzed eight augmentation strategies.",
+    href: "/#story",
+    stat: "15K+",
+  },
+];
+---
+
+<Base>
+  <section class="hero shell">
+    <p class="kicker"><span></span> Engineer · builder · tinkerer</p>
+    <h1>Curiosity is the <em>operating system.</em></h1>
+    <div class="hero-foot">
+      <p>
+        I’m Suchit, an engineer in Bangalore following questions
+        through language models, data systems, and everything beneath them.
+      </p>
+      <a class="text-link" href="/blog/">Read my blog <span>→</span></a>
+    </div>
+  </section>
+
+  <section class="interests shell" aria-label="Areas of interest">
+    <p>Interests</p>
+    <div><span>Language models</span><span>Distributed systems</span><span>Research engineering</span><span>Blog</span></div>
+  </section>
+
+  <section class="work shell" id="work">
+    <div class="section-heading">
+      <p>Selected work</p>
+      <p>Things I’ve built, investigated, and learned from.</p>
+    </div>
+
+    <div class="work-list">
+      {work.map((item) => (
+        <a class="work-row" href={item.href}>
+          <span class="work-index">{item.index}</span>
+          <div class="work-copy">
+            <p>{item.eyebrow}</p>
+            <h2>{item.title}</h2>
+            <span>{item.description}</span>
+          </div>
+          <strong>{item.stat}</strong>
+          <span class="work-arrow">↗</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="home-story shell" id="story">
+    <div class="story-heading">
+      <p class="kicker"><span></span> About</p>
+      <p>I’m an engineer and inveterate tinkerer based in Bangalore.</p>
+    </div>
+
+    <div class="story-body">
+      <img src="/images/about/profile.jpg" alt="A young kitten resting on Suchit's lap" />
+      <div>
+        <p>I’m interested in how intelligent systems are built, evaluated, and made genuinely useful. My path into the field has moved through deep learning, large-scale data processing, distributed systems, and a lot of learning in public.</p>
+        <p>I’ve built RAG and agent workflows, processed tens of terabytes of Common Crawl data, trained small language models, and written explanations to make each new idea stick.</p>
+        <p>Away from a terminal, I’m usually reading, learning French, playing guitar, or following another curiosity down a rabbit hole.</p>
+      </div>
+    </div>
+
+    <div class="experience">
+      <p>Selected experience</p>
+      <div class="experience-row"><span>2024</span><strong>GenAI Intern</strong><span>NextWealth</span><p>RAG extraction, agent-generated conversations, and dataset augmentation analysis.</p></div>
+      <div class="experience-row"><span>2024</span><strong>DevOps & Distributed Computing Intern</strong><span>DenseLayerAI</span><p>Five-node Spark infrastructure and a fault-tolerant Common Crawl pipeline.</p></div>
+      <div class="experience-row"><span>2022—26</span><strong>Information Science & Engineering</strong><span>MSRIT</span><p>Bangalore, India.</p></div>
+    </div>
+  </section>
+
+</Base>
