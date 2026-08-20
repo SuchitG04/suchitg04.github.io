@@ -2,6 +2,8 @@
 
 Suchit G's personal site and technical blog, built with [Astro](https://astro.build/).
 
+See [AUTHORING.md](./AUTHORING.md) for the complete blog and Bits authoring runbook.
+
 ## Run locally
 
 ```sh
